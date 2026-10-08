@@ -4,6 +4,7 @@
  * from the same source. Run `npm run build`; the output is committed.
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { deflateSync } from 'node:zlib';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -130,6 +131,75 @@ function socialCard(width, height) {
   );
 }
 
+/** Lockup and byline centred on paper, for wide banners that get cropped at the sides. */
+function banner(width, height) {
+  const markSize = Math.round(height * 0.2);
+  const size = Math.round(markSize * 0.64);
+  const gap = Math.round(markSize * 0.28);
+  const bylineSize = Math.round(size * 0.5);
+  const probe = wordmark(0, 0, size, { word: ink, labs: muted });
+  const lockupWidth = markSize + gap + probe.width;
+  const left = (width - lockupWidth) / 2;
+  const blockHeight = markSize + bylineSize * 2.4;
+  const top = (height - blockHeight) / 2;
+  const baseline = top + markSize / 2 + capHeight(size) / 2;
+  const word = wordmark(left + markSize + gap, baseline, size, { word: ink, labs: muted });
+  const bylineProbe = textPath(medium, byline, 0, 0, bylineSize, -0.01);
+  const line = textPath(medium, byline, (width - bylineProbe.width) / 2, top + blockHeight, bylineSize, -0.01);
+  const scale = markSize / markBox.size;
+  return svgDoc(
+    width,
+    height,
+    `<g transform="translate(${left} ${top}) scale(${scale}) translate(${-markBox.x} ${-markBox.x})">${markShapes({ tile: ink, seed: moss })}</g>` +
+      `${word.svg}<path d="${line.d}" fill="${muted}"/>`,
+    paper,
+  );
+}
+
+/** A 24-bit PNG (no alpha channel), for stores that refuse transparency. */
+function opaquePng(svg, width) {
+  const image = new Resvg(svg, { fitTo: { mode: 'width', value: width } }).render();
+  const { width: w, height: h, pixels } = image;
+  const rows = Buffer.alloc(h * (w * 3 + 1));
+  for (let y = 0; y < h; y++) {
+    const row = y * (w * 3 + 1);
+    for (let x = 0; x < w; x++) {
+      const from = (y * w + x) * 4;
+      pixels.copy(rows, row + 1 + x * 3, from, from + 3);
+    }
+  }
+  const chunk = (type, data) => {
+    const out = Buffer.alloc(12 + data.length);
+    out.writeUInt32BE(data.length, 0);
+    out.write(type, 4, 'ascii');
+    data.copy(out, 8);
+    out.writeUInt32BE(crc32(out.subarray(4, 8 + data.length)), 8 + data.length);
+    return out;
+  };
+  const header = Buffer.alloc(13);
+  header.writeUInt32BE(w, 0);
+  header.writeUInt32BE(h, 4);
+  header.set([8, 2, 0, 0, 0], 8);
+  return Buffer.concat([
+    Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+    chunk('IHDR', header),
+    chunk('IDAT', deflateSync(rows, { level: 9 })),
+    chunk('IEND', Buffer.alloc(0)),
+  ]);
+}
+
+const crcTable = Array.from({ length: 256 }, (_, n) => {
+  let c = n;
+  for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+  return c >>> 0;
+});
+
+function crc32(data) {
+  let c = 0xffffffff;
+  for (const byte of data) c = crcTable[(c ^ byte) & 0xff] ^ (c >>> 8);
+  return (c ^ 0xffffffff) >>> 0;
+}
+
 function png(svg, width) {
   return new Resvg(svg, { fitTo: { mode: 'width', value: width } }).render().asPng();
 }
@@ -206,3 +276,7 @@ write('web/icon-maskable-512.png', png(icon(512, { ground: ink, colors: dark, sh
 // Social cards.
 write('social/og-image.png', png(socialCard(1200, 630), 1200));
 write('social/github-social-preview.png', png(socialCard(1280, 640), 1280));
+
+// Store pages.
+write('stores/google-play-header.png', opaquePng(banner(4096, 2304), 4096));
+write('stores/google-play-icon-512.png', opaquePng(icon(512, { ground: ink, colors: dark, share: 0.5 }), 512));

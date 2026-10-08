@@ -14,6 +14,7 @@ The studio's logo, icons and social images. *Nidus* is Latin for "nest": the mar
 | `avatar/` | `avatar.svg`, `avatar-1024.png`, `avatar-512.png` | GitHub, npm, and other profile pictures. Safe for a circle crop. |
 | `web/` | `favicon.svg`, `favicon.ico` (16, 32, 48), `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` | Websites and web app manifests. |
 | `social/` | `og-image.png` (1200×630), `github-social-preview.png` (1280×640) | Link previews and the GitHub social preview. |
+| `stores/` | `google-play-header.png` (4096×2304), `google-play-icon-512.png` | The Google Play developer page. 24-bit PNGs, since Play refuses transparency. |
 | `tokens.json` | Colours, byline, wordmark type | The single source for the values below. |
 
 ## Colours
