@@ -333,3 +333,55 @@ function splitoFeatureGraphic(width, height) {
 
 write('apps/splito/google-play-icon-512.png', opaquePng(splitoIcon(512), 512));
 write('apps/splito/google-play-feature-graphic.png', opaquePng(splitoFeatureGraphic(1024, 500), 1024));
+
+/** Splito's Play Store phone screenshots: captures from apps/splito/screenshots/raw, captioned. */
+const phoneShots = [
+  ['01-friends', 'Split bills, stay friends', 'See who owes whom at a glance'],
+  ['02-group', 'Every trip, sorted', 'One ledger for the whole group'],
+  ['03-add-expense', 'Add an expense like a sentence', 'Paid by you, split equally. Done.'],
+  ['04-settle-up', 'Settle up over UPI', 'Pay from any UPI app in a tap'],
+  ['05-activity', 'See what everyone added', 'Every expense and payment as it happens'],
+];
+
+/** One line of outlined text centred on `width`, shrunk until it fits `maxWidth`. */
+function centredLine(face, text, width, baseline, size, maxWidth, letterSpacing) {
+  const probe = textPath(face, text, 0, 0, size, letterSpacing);
+  const fitted = probe.width > maxWidth ? (size * maxWidth) / probe.width : size;
+  const line = textPath(face, text, 0, 0, fitted, letterSpacing);
+  return textPath(face, text, (width - line.width) / 2, baseline, fitted, letterSpacing).d;
+}
+
+/**
+ * A 1080×1920 phone screenshot: caption and subline on Splito purple, then the
+ * capture (1080×2400) scaled to fit below them with rounded corners.
+ */
+function splitoPhoneShot(capture, title, subline) {
+  const width = 1080;
+  const height = 1920;
+  const margin = 72;
+  const titleBaseline = 196;
+  const sublineBaseline = 268;
+  const shotTop = 336;
+  const shotHeight = height - shotTop - margin;
+  const shotWidth = (shotHeight * 1080) / 2400;
+  const shotLeft = (width - shotWidth) / 2;
+  const radius = 44;
+  const data = readFileSync(join(root, 'apps/splito/screenshots/raw', capture)).toString('base64');
+  const box = `x="${shotLeft}" y="${shotTop}" width="${shotWidth}" height="${shotHeight}" rx="${radius}"`;
+  return svgDoc(
+    width,
+    height,
+    `<defs><clipPath id="shot"><rect ${box}/></clipPath>` +
+      `<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="24"/></filter></defs>` +
+      `<rect ${box} fill="#1E1747" opacity="0.45" filter="url(#shadow)" transform="translate(0 16)"/>` +
+      `<path d="${centredLine(jakartaExtraBold, title, width, titleBaseline, 76, width - margin * 2, -0.02)}" fill="${splito.color.onPrimary}"/>` +
+      `<path d="${centredLine(jakartaMedium, subline, width, sublineBaseline, 38, width - margin * 2, -0.01)}" fill="${splito.color.lilac}"/>` +
+      `<image x="${shotLeft}" y="${shotTop}" width="${shotWidth}" height="${shotHeight}" clip-path="url(#shot)" href="data:image/png;base64,${data}"/>` +
+      `<rect ${box} fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="3"/>`,
+    splito.color.primary,
+  );
+}
+
+for (const [name, title, subline] of phoneShots) {
+  write(`apps/splito/screenshots/${name}.png`, opaquePng(splitoPhoneShot(`${name}.png`, title, subline), 1080));
+}
