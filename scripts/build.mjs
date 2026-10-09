@@ -280,3 +280,56 @@ write('social/github-social-preview.png', png(socialCard(1280, 640), 1280));
 // Store pages.
 write('stores/google-play-header.png', opaquePng(banner(4096, 2304), 4096));
 write('stores/google-play-icon-512.png', opaquePng(icon(512, { ground: ink, colors: dark, share: 0.5 }), 512));
+
+// Splito: store artwork, drawn from the app icon's own shapes and the app's font.
+const splito = tokens.apps.splito;
+const jakartaExtraBold = font('PlusJakartaSans_800ExtraBold.ttf');
+const jakartaMedium = font('PlusJakartaSans_500Medium.ttf');
+
+/**
+ * Splito's mark in the icon's 1024 box: two half-discs, white on the left and
+ * lilac on the right, offset down and apart. Its bounds run 270–754 both ways.
+ */
+const splitoMark =
+  `<path d="M486 270 A216 216 0 0 0 486 702 Z" fill="${splito.color.onPrimary}"/>` +
+  `<path d="M538 322 A216 216 0 0 1 538 754 Z" fill="${splito.color.lilac}"/>`;
+
+/** The Play icon: the app icon's full square; Play rounds the corners itself. */
+function splitoIcon(side) {
+  return svgDoc(
+    side,
+    side,
+    `<g transform="scale(${side / 1024})">${splitoMark}</g>`,
+    splito.color.primary,
+  );
+}
+
+/** The 1024×500 feature graphic: mark, name and tagline, centred. */
+function splitoFeatureGraphic(width, height) {
+  const markSize = 210;
+  const nameSize = 112;
+  const taglineSize = 40;
+  const gap = 56;
+  const name = textPath(jakartaExtraBold, splito.name, 0, 0, nameSize, -0.02);
+  const tagline = textPath(jakartaMedium, splito.tagline, 0, 0, taglineSize, -0.01);
+  const textWidth = Math.max(name.width, tagline.width);
+  const left = (width - (markSize + gap + textWidth)) / 2;
+  const markTop = (height - markSize) / 2;
+  const textLeft = left + markSize + gap;
+  const capHeight = (jakartaExtraBold.tables.os2.sCapHeight / jakartaExtraBold.unitsPerEm) * nameSize;
+  const block = capHeight + 28 + taglineSize;
+  const nameBaseline = (height - block) / 2 + capHeight;
+  const taglineBaseline = nameBaseline + 28 + taglineSize;
+  const scale = markSize / 484;
+  return svgDoc(
+    width,
+    height,
+    `<g transform="translate(${left} ${markTop}) scale(${scale}) translate(-270 -270)">${splitoMark}</g>` +
+      `<path d="${textPath(jakartaExtraBold, splito.name, textLeft, nameBaseline, nameSize, -0.02).d}" fill="${splito.color.onPrimary}"/>` +
+      `<path d="${textPath(jakartaMedium, splito.tagline, textLeft, taglineBaseline, taglineSize, -0.01).d}" fill="${splito.color.lilac}"/>`,
+    splito.color.primary,
+  );
+}
+
+write('apps/splito/google-play-icon-512.png', opaquePng(splitoIcon(512), 512));
+write('apps/splito/google-play-feature-graphic.png', opaquePng(splitoFeatureGraphic(1024, 500), 1024));

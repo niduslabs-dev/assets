@@ -15,6 +15,7 @@ The studio's logo, icons and social images. *Nidus* is Latin for "nest": the mar
 | `web/` | `favicon.svg`, `favicon.ico` (16, 32, 48), `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` | Websites and web app manifests. |
 | `social/` | `og-image.png` (1200×630), `github-social-preview.png` (1280×640) | Link previews and the GitHub social preview. |
 | `stores/` | `google-play-header.png` (4096×2304), `google-play-icon-512.png` | The Google Play developer page. 24-bit PNGs, since Play refuses transparency. |
+| `apps/splito/` | `google-play-icon-512.png`, `google-play-feature-graphic.png` (1024×500) | Splito's store listing: its icon redrawn from the app's shapes, and its name in Plus Jakarta Sans, the app's typeface. |
 | `tokens.json` | Colours, byline, wordmark type | The single source for the values below. |
 
 ## Colours
@@ -50,4 +51,4 @@ npm install
 npm run build
 ```
 
-The build outlines the wordmark from the Manrope files in `scripts/fonts/` (SIL Open Font License, `scripts/fonts/OFL.txt`) and renders the PNGs with resvg.
+The build outlines text from the Manrope and Plus Jakarta Sans files in `scripts/fonts/` (both SIL Open Font License; see the `OFL-*.txt` files there) and renders the PNGs with resvg.
