@@ -1,5 +1,7 @@
 # Nidus Labs assets
 
+> Part of the Nidus Labs workspace (`~/Work/personal/niduslabs`). Start with the workspace guide `../AGENTS.md` and `../STATUS.md`.
+
 The studio's logo, icons and social images. *Nidus* is Latin for "nest": the mark is an app tile with a seed settling into it.
 
 **A home for little ideas.**
