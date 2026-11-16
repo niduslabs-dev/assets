@@ -28,7 +28,7 @@ enum ThemeTokens {
             /// Links and accent icons. A moss shade that clears 4.5:1.
             static let link = ThemeColour(light: .init(0x466E41), dark: .init(0x8DBB82), lightContrast: .init(0x3B5D38), darkContrast: .init(0xA9D19F))
             /// The fill of the one primary action per surface.
-            static let actionPrimary = ThemeColour(light: .init(0x4F7A4A), dark: .init(0x4F7A4A), lightContrast: .init(0x3B5D38), darkContrast: .init(0x3B5D38))
+            static let actionPrimary = ThemeColour(light: .init(0x4F7A4A), dark: .init(0x4F7A4A), lightContrast: .init(0x3B5D38), darkContrast: .init(0x4F7A4A))
             /// Primary fill under the pointer. Lighter on dark.
             static let actionPrimaryHover = ThemeColour(light: .init(0x456B41), dark: .init(0x527F4C), lightContrast: .init(0x34522F), darkContrast: .init(0x3B5D38))
             /// Primary fill while pressed.
@@ -61,13 +61,15 @@ enum ThemeTokens {
             static let openRing = ThemeColour(light: .init(0x4F7A4A, alpha: 0.25), dark: .init(0x8DBB82, alpha: 0.35), lightContrast: .init(0x4F7A4A, alpha: 0.25), darkContrast: .init(0x8DBB82, alpha: 0.35))
             /// A progress bar's unfilled part.
             static let track = ThemeColour(light: .init(0x17161C, alpha: 0.08), dark: .init(0xF4F4F6, alpha: 0.1), lightContrast: .init(0x17161C, alpha: 0.08), darkContrast: .init(0xF4F4F6, alpha: 0.1))
+            /// The ink the dark glass is tinted with, at opacity.glassTint. surfaceBase dark is this pair.
+            static let glassTint = ThemeColour(fixed: .init(0x1C1B22))
             /// Dim over a window behind a sheet.
             static let scrim = ThemeColour(light: .init(0x17161C, alpha: 0.2), dark: .init(0x000000, alpha: 0.36), lightContrast: .init(0x17161C, alpha: 0.2), darkContrast: .init(0x000000, alpha: 0.36))
             /// A disabled primary on the kit board. In code, disabled is opacity.disabled on the live control.
             static let disabledFill = ThemeColour(light: .init(0xC9C8CF), dark: .init(0x4A4952), lightContrast: .init(0xC9C8CF), darkContrast: .init(0x4A4952))
             enum Status {
                 /// Fill of a done badge. White on it is 5.3:1.
-                static let success = ThemeColour(light: .init(0x2F7A3A), dark: .init(0x2F7A3A), lightContrast: .init(0x225C2B), darkContrast: .init(0x225C2B))
+                static let success = ThemeColour(light: .init(0x2F7A3A), dark: .init(0x2F7A3A), lightContrast: .init(0x225C2B), darkContrast: .init(0x2F7A3A))
                 /// Green status icons and text.
                 static let good = ThemeColour(light: .init(0x2F7A3A), dark: .init(0x8DBB82), lightContrast: .init(0x225C2B), darkContrast: .init(0xA9D19F))
                 /// Warning icons and a warning action's label.
@@ -126,6 +128,7 @@ enum ThemeTokens {
         static let panelTitle = ThemeType(size: 17, weight: .semibold, family: .system, tracking: -0.17)
         static let sectionTitle = ThemeType(size: 15, weight: .semibold, family: .system)
         static let body = ThemeType(size: 13, weight: .regular, family: .system)
+        static let bodyMedium = ThemeType(size: 13, weight: .medium, family: .system)
         static let bodyEmphasis = ThemeType(size: 13, weight: .semibold, family: .system)
         static let callout = ThemeType(size: 12, weight: .regular, family: .system)
         static let caption = ThemeType(size: 11, weight: .regular, family: .system)
@@ -173,8 +176,8 @@ enum ThemeTokens {
         static let pressShade: Double = 0.08
         static let menuIdleText: Double = 0.78
         static let menuDisabledText: Double = 0.35
-        /// determinate progress never passes this until the work is done
-        static let progressCeiling: Double = 0.9
+        /// the ink tint over the behind-window blur in dark mode
+        static let glassTint: Double = 0.86
     }
     enum Shadow {
         static let window = ThemeShadow(colour: ThemeColour(fixed: .init(0x000000, alpha: 0.28)), x: 0, y: 20, blur: 50)
@@ -182,6 +185,8 @@ enum ThemeTokens {
         static let knob = ThemeShadow(colour: ThemeColour(fixed: .init(0x000000, alpha: 0.25)), x: 0, y: 1, blur: 2)
     }
     enum Motion {
+        /// determinate progress never passes this until the work is done
+        static let progressCeiling: Double = 0.9
         enum Spring {
             static let swap = ThemeSpring(response: 0.4, dampingFraction: 0.9)
             static let slideIn = ThemeSpring(response: 0.4, dampingFraction: 0.9)

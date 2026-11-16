@@ -40,6 +40,9 @@
   --type-body-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
   --type-body-size: 13px;
   --type-body-weight: 400;
+  --type-body-medium-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --type-body-medium-size: 13px;
+  --type-body-medium-weight: 500;
   --type-body-emphasis-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
   --type-body-emphasis-size: 13px;
   --type-body-emphasis-weight: 600;
@@ -75,10 +78,11 @@
   --opacity-press-shade: 0.08;
   --opacity-menu-idle-text: 0.78;
   --opacity-menu-disabled-text: 0.35;
-  --opacity-progress-ceiling: 0.9;
+  --opacity-glass-tint: 0.86;
   --shadow-window: 0px 20px 50px 0px rgba(0, 0, 0, 0.28);
   --shadow-menu: 0px 10px 28px 0px rgba(0, 0, 0, 0.22);
   --shadow-knob: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  --motion-progress-ceiling: 0.9;
   --motion-spring-swap-response: 0.4;
   --motion-spring-swap-damping: 0.9;
   --motion-spring-slide-in-response: 0.4;
@@ -250,6 +254,7 @@
   --color-role-highlight: rgba(79, 122, 74, 0.1);
   --color-role-open-ring: rgba(79, 122, 74, 0.25);
   --color-role-track: rgba(23, 22, 28, 0.08);
+  --color-role-glass-tint: #1C1B22;
   --color-role-scrim: rgba(23, 22, 28, 0.2);
   --color-role-disabled-fill: #C9C8CF;
   --color-role-status-success: #2F7A3A;
@@ -320,7 +325,7 @@
   --app-pane-color-frame-button-edge: rgba(255, 255, 255, 0.26);
 }
 
-[data-contrast="more"] {
+[data-contrast="more"], [data-contrast="more"] [data-theme="light"] {
   --color-role-text-primary: #000000;
   --color-role-text-secondary: #3E3D45;
   --color-role-link: #3B5D38;
@@ -351,7 +356,7 @@
   --color-role-text-primary: #FFFFFF;
   --color-role-text-secondary: #DCDBE3;
   --color-role-link: #A9D19F;
-  --color-role-action-primary: #3B5D38;
+  --color-role-action-primary: #4F7A4A;
   --color-role-action-primary-hover: #3B5D38;
   --color-role-action-primary-pressed: #34522F;
   --color-role-on-action: #FFFFFF;
@@ -368,9 +373,10 @@
   --color-role-highlight: rgba(141, 187, 130, 0.3);
   --color-role-open-ring: rgba(141, 187, 130, 0.35);
   --color-role-track: rgba(244, 244, 246, 0.1);
+  --color-role-glass-tint: #1C1B22;
   --color-role-scrim: rgba(0, 0, 0, 0.36);
   --color-role-disabled-fill: #4A4952;
-  --color-role-status-success: #225C2B;
+  --color-role-status-success: #2F7A3A;
   --color-role-status-good: #A9D19F;
   --color-role-status-warning: #FFC27A;
   --color-role-status-warning-text: #FFE7C4;
@@ -474,7 +480,7 @@
     --color-role-text-primary: #FFFFFF;
     --color-role-text-secondary: #DCDBE3;
     --color-role-link: #A9D19F;
-    --color-role-action-primary: #3B5D38;
+    --color-role-action-primary: #4F7A4A;
     --color-role-action-primary-hover: #3B5D38;
     --color-role-action-primary-pressed: #34522F;
     --color-role-on-action: #FFFFFF;
@@ -491,9 +497,10 @@
     --color-role-highlight: rgba(141, 187, 130, 0.3);
     --color-role-open-ring: rgba(141, 187, 130, 0.35);
     --color-role-track: rgba(244, 244, 246, 0.1);
+    --color-role-glass-tint: #1C1B22;
     --color-role-scrim: rgba(0, 0, 0, 0.36);
     --color-role-disabled-fill: #4A4952;
-    --color-role-status-success: #225C2B;
+    --color-role-status-success: #2F7A3A;
     --color-role-status-good: #A9D19F;
     --color-role-status-warning: #FFC27A;
     --color-role-status-warning-text: #FFE7C4;

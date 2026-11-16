@@ -45,7 +45,7 @@ export function cssFile(tokens) {
     `/* ${GENERATED_NOTE} */\n`,
     block(':root, [data-theme="light"]', base),
     block('[data-theme="dark"]', colourLines('dark')),
-    block('[data-contrast="more"]', colourLines('lightContrast')),
+    block('[data-contrast="more"], [data-contrast="more"] [data-theme="light"]', colourLines('lightContrast')),
     block('[data-theme="dark"][data-contrast="more"], [data-contrast="more"] [data-theme="dark"]', colourLines('darkContrast')),
     `@media (prefers-color-scheme: dark) {\n${block(':root:not([data-theme])', colourLines('dark'), '  ')}}\n`,
     `@media (prefers-contrast: more) {\n${block(':root:not([data-theme]):not([data-contrast])', colourLines('lightContrast'), '  ')}}\n`,

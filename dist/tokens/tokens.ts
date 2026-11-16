@@ -63,7 +63,7 @@ export const tokens = {
         "light": "#4F7A4A",
         "dark": "#4F7A4A",
         "lightContrast": "#3B5D38",
-        "darkContrast": "#3B5D38"
+        "darkContrast": "#4F7A4A"
       },
       "actionPrimaryHover": {
         "light": "#456B41",
@@ -161,6 +161,12 @@ export const tokens = {
         "lightContrast": "rgba(23, 22, 28, 0.08)",
         "darkContrast": "rgba(244, 244, 246, 0.1)"
       },
+      "glassTint": {
+        "light": "#1C1B22",
+        "dark": "#1C1B22",
+        "lightContrast": "#1C1B22",
+        "darkContrast": "#1C1B22"
+      },
       "scrim": {
         "light": "rgba(23, 22, 28, 0.2)",
         "dark": "rgba(0, 0, 0, 0.36)",
@@ -178,7 +184,7 @@ export const tokens = {
           "light": "#2F7A3A",
           "dark": "#2F7A3A",
           "lightContrast": "#225C2B",
-          "darkContrast": "#225C2B"
+          "darkContrast": "#2F7A3A"
         },
         "good": {
           "light": "#2F7A3A",
@@ -348,6 +354,17 @@ export const tokens = {
       "size": 13,
       "weight": 400
     },
+    "bodyMedium": {
+      "family": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "size": 13,
+      "weight": 500
+    },
     "bodyEmphasis": {
       "family": [
         "-apple-system",
@@ -429,7 +446,7 @@ export const tokens = {
     "pressShade": 0.08,
     "menuIdleText": 0.78,
     "menuDisabledText": 0.35,
-    "progressCeiling": 0.9
+    "glassTint": 0.86
   },
   "shadow": {
     "window": {
@@ -455,6 +472,7 @@ export const tokens = {
     }
   },
   "motion": {
+    "progressCeiling": 0.9,
     "spring": {
       "swap": {
         "response": 0.4,

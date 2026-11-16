@@ -84,7 +84,7 @@
       "light": "#4F7A4A",
       "dark": "#4F7A4A",
       "lightContrast": "#3B5D38",
-      "darkContrast": "#3B5D38",
+      "darkContrast": "#4F7A4A",
       "description": "The fill of the one primary action per surface."
     },
     "color.role.actionPrimaryHover": {
@@ -215,6 +215,14 @@
       "darkContrast": "rgba(244, 244, 246, 0.1)",
       "description": "A progress bar's unfilled part."
     },
+    "color.role.glassTint": {
+      "type": "color",
+      "light": "#1C1B22",
+      "dark": "#1C1B22",
+      "lightContrast": "#1C1B22",
+      "darkContrast": "#1C1B22",
+      "description": "The ink the dark glass is tinted with, at opacity.glassTint. surfaceBase dark is this pair."
+    },
     "color.role.scrim": {
       "type": "color",
       "light": "rgba(23, 22, 28, 0.2)",
@@ -236,7 +244,7 @@
       "light": "#2F7A3A",
       "dark": "#2F7A3A",
       "lightContrast": "#225C2B",
-      "darkContrast": "#225C2B",
+      "darkContrast": "#2F7A3A",
       "description": "Fill of a done badge. White on it is 5.3:1."
     },
     "color.role.status.good": {
@@ -385,7 +393,8 @@
     },
     "type.display.size": {
       "type": "dimension",
-      "value": 56
+      "value": 56,
+      "description": "the one big figure on a moment screen (rounded, monospaced digits)"
     },
     "type.display.weight": {
       "type": "fontWeight",
@@ -404,7 +413,8 @@
     },
     "type.hero.size": {
       "type": "dimension",
-      "value": 36
+      "value": 36,
+      "description": "a headline figure on a page (rounded)"
     },
     "type.hero.weight": {
       "type": "fontWeight",
@@ -423,7 +433,8 @@
     },
     "type.title.size": {
       "type": "dimension",
-      "value": 26
+      "value": 26,
+      "description": "onboarding and moment titles (Manrope 26 bold on onboarding)"
     },
     "type.title.weight": {
       "type": "fontWeight",
@@ -442,7 +453,8 @@
     },
     "type.windowTitle.size": {
       "type": "dimension",
-      "value": 22
+      "value": 22,
+      "description": "an app or document name centred in a window"
     },
     "type.windowTitle.weight": {
       "type": "fontWeight",
@@ -461,7 +473,8 @@
     },
     "type.pageTitle.size": {
       "type": "dimension",
-      "value": 20
+      "value": 20,
+      "description": "page header (\"Settings\")"
     },
     "type.pageTitle.weight": {
       "type": "fontWeight",
@@ -480,7 +493,8 @@
     },
     "type.panelTitle.size": {
       "type": "dimension",
-      "value": 17
+      "value": 17,
+      "description": "notification panel title"
     },
     "type.panelTitle.weight": {
       "type": "fontWeight",
@@ -503,7 +517,8 @@
     },
     "type.sectionTitle.size": {
       "type": "dimension",
-      "value": 15
+      "value": 15,
+      "description": "sheet titles; empty-state titles (15 regular)"
     },
     "type.sectionTitle.weight": {
       "type": "fontWeight",
@@ -522,11 +537,32 @@
     },
     "type.body.size": {
       "type": "dimension",
-      "value": 13
+      "value": 13,
+      "description": "rows, labels, body"
     },
     "type.body.weight": {
       "type": "fontWeight",
       "value": 400
+    },
+    "type.bodyMedium.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.bodyMedium.size": {
+      "type": "dimension",
+      "value": 13,
+      "description": "secondary button label"
+    },
+    "type.bodyMedium.weight": {
+      "type": "fontWeight",
+      "value": 500
     },
     "type.bodyEmphasis.family": {
       "type": "fontFamily",
@@ -541,7 +577,8 @@
     },
     "type.bodyEmphasis.size": {
       "type": "dimension",
-      "value": 13
+      "value": 13,
+      "description": "primary button label, emphasised value"
     },
     "type.bodyEmphasis.weight": {
       "type": "fontWeight",
@@ -560,7 +597,8 @@
     },
     "type.callout.size": {
       "type": "dimension",
-      "value": 12
+      "value": 12,
+      "description": "descriptions, links, meta"
     },
     "type.callout.weight": {
       "type": "fontWeight",
@@ -579,7 +617,8 @@
     },
     "type.caption.size": {
       "type": "dimension",
-      "value": 11
+      "value": 11,
+      "description": "captions, timestamps"
     },
     "type.caption.weight": {
       "type": "fontWeight",
@@ -598,7 +637,8 @@
     },
     "type.groupLabel.size": {
       "type": "dimension",
-      "value": 11
+      "value": 11,
+      "description": "group labels above cards"
     },
     "type.groupLabel.weight": {
       "type": "fontWeight",
@@ -617,7 +657,8 @@
     },
     "type.micro.size": {
       "type": "dimension",
-      "value": 10
+      "value": 10,
+      "description": "chevrons, tag text"
     },
     "type.micro.weight": {
       "type": "fontWeight",
@@ -719,10 +760,10 @@
       "type": "number",
       "value": 0.35
     },
-    "opacity.progressCeiling": {
+    "opacity.glassTint": {
       "type": "number",
-      "value": 0.9,
-      "description": "determinate progress never passes this until the work is done"
+      "value": 0.86,
+      "description": "the ink tint over the behind-window blur in dark mode"
     },
     "shadow.window": {
       "type": "shadow",
@@ -753,6 +794,11 @@
         "blur": 2,
         "spread": 0
       }
+    },
+    "motion.progressCeiling": {
+      "type": "number",
+      "value": 0.9,
+      "description": "determinate progress never passes this until the work is done"
     },
     "motion.spring.swap.response": {
       "type": "number",
