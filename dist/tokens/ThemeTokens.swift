@@ -41,10 +41,10 @@ enum ThemeTokens {
             static let surfaceBase = ThemeColour(light: .init(0xFFFFFF), dark: .init(0x1C1B22, alpha: 0.86), lightContrast: .init(0xFFFFFF), darkContrast: .init(0x232229))
             /// surfaceBase with Reduce Transparency on, or where no blur is drawn.
             static let surfaceBaseSolid = ThemeColour(light: .init(0xFFFFFF), dark: .init(0x232229), lightContrast: .init(0xFFFFFF), darkContrast: .init(0x232229))
-            /// Cards inside a window. No shadow.
-            static let surfaceCard = ThemeColour(light: .init(0xF4F4F6), dark: .init(0xF4F4F6, alpha: 0.06), lightContrast: .init(0xF4F4F6), darkContrast: .init(0xF4F4F6, alpha: 0.12))
-            /// Selects, fields, popover rows.
-            static let surfaceRaised = ThemeColour(light: .init(0xFFFFFF), dark: .init(0x2C2B33, alpha: 0.9), lightContrast: .init(0xFFFFFF), darkContrast: .init(0x2C2B33))
+            /// Cards inside a window and info cards: ink at 4% over the surface (Drop's shipped fill). No shadow.
+            static let surfaceCard = ThemeColour(light: .init(0x17161C, alpha: 0.04), dark: .init(0xF4F4F6, alpha: 0.06), lightContrast: .init(0x17161C, alpha: 0.08), darkContrast: .init(0xF4F4F6, alpha: 0.12))
+            /// Selects and fields: paper on light (Drop's shipped fill), with a hairline.
+            static let surfaceRaised = ThemeColour(light: .init(0xF4F4F6), dark: .init(0x2C2B33, alpha: 0.9), lightContrast: .init(0xF4F4F6), darkContrast: .init(0x2C2B33))
             /// Menu panels. Dark sits over a behind-window blur.
             static let surfaceMenu = ThemeColour(light: .init(0xFFFFFF), dark: .init(0x24232B, alpha: 0.96), lightContrast: .init(0xFFFFFF), darkContrast: .init(0x24232B))
             /// The thin edge on cards and controls.
@@ -67,19 +67,27 @@ enum ThemeTokens {
             static let scrim = ThemeColour(light: .init(0x17161C, alpha: 0.2), dark: .init(0x000000, alpha: 0.36), lightContrast: .init(0x17161C, alpha: 0.2), darkContrast: .init(0x000000, alpha: 0.36))
             /// A disabled primary on the kit board. In code, disabled is opacity.disabled on the live control.
             static let disabledFill = ThemeColour(light: .init(0xC9C8CF), dark: .init(0x4A4952), lightContrast: .init(0xC9C8CF), darkContrast: .init(0x4A4952))
+            /// Glyphs on a GlassToolbar, a ModePill and an app's title row.
+            static let toolbarIcon = ThemeColour(light: .init(0x3E3D45), dark: .init(0xD6D5DD), lightContrast: .init(0x17161C), darkContrast: .init(0xF4F4F6))
+            /// The GlassToolbar capsule and circle, and the ModePill.
+            static let surfacePill = ThemeColour(light: .init(0xFFFFFF), dark: .init(0x2C2B33), lightContrast: .init(0xFFFFFF), darkContrast: .init(0x2C2B33))
+            /// Hover and press shade on glass buttons, at opacity.toolbarHover or opacity.toolbarPressed.
+            static let toolbarShade = ThemeColour(light: .init(0x17161C), dark: .init(0xF4F4F6), lightContrast: .init(0x17161C), darkContrast: .init(0xF4F4F6))
+            /// A recording in progress: GlassToolbar's recording state.
+            static let recording = ThemeColour(light: .init(0xD93A2B), dark: .init(0xFF5A4B), lightContrast: .init(0xB0281B), darkContrast: .init(0xFF7A6E))
             enum Status {
                 /// Fill of a done badge. White on it is 5.3:1.
                 static let success = ThemeColour(light: .init(0x2F7A3A), dark: .init(0x2F7A3A), lightContrast: .init(0x225C2B), darkContrast: .init(0x2F7A3A))
-                /// Green status icons and text.
-                static let good = ThemeColour(light: .init(0x2F7A3A), dark: .init(0x8DBB82), lightContrast: .init(0x225C2B), darkContrast: .init(0xA9D19F))
+                /// Green status icons and text. Dark is mossOnDark's Increase Contrast step, so a success chip (on highlight) clears 4.5:1 over glass on any wallpaper.
+                static let good = ThemeColour(light: .init(0x2F7A3A), dark: .init(0xA9D19F), lightContrast: .init(0x225C2B), darkContrast: .init(0xC5E0BE))
                 /// Warning icons and a warning action's label.
                 static let warning = ThemeColour(light: .init(0xB25E00), dark: .init(0xF0A44B), lightContrast: .init(0x8A4800), darkContrast: .init(0xFFC27A))
                 /// Text on a warning fill.
                 static let warningText = ThemeColour(light: .init(0x6B4300), dark: .init(0xF5D3A1), lightContrast: .init(0x4A2F00), darkContrast: .init(0xFFE7C4))
                 /// A warning card's fill.
                 static let warningFill = ThemeColour(light: .init(0xFFF4E0), dark: .init(0xFFAA3C, alpha: 0.14), lightContrast: .init(0xFFF4E0), darkContrast: .init(0xFFAA3C, alpha: 0.2))
-                /// Error icons and error text.
-                static let danger = ThemeColour(light: .init(0xC4271B), dark: .init(0xFF8A80), lightContrast: .init(0x9E1D13), darkContrast: .init(0xFFB0A8))
+                /// Error icons and error text. Dark clears 4.5:1 on dangerFill over glass on any wallpaper.
+                static let danger = ThemeColour(light: .init(0xC4271B), dark: .init(0xFF9D94), lightContrast: .init(0x9E1D13), darkContrast: .init(0xFFB0A8))
                 /// An error card's fill, and a field's error halo.
                 static let dangerFill = ThemeColour(light: .init(0xFDECEA), dark: .init(0xFF5A50, alpha: 0.14), lightContrast: .init(0xFDECEA), darkContrast: .init(0xFF5A50, alpha: 0.2))
             }
@@ -178,6 +186,10 @@ enum ThemeTokens {
         static let menuDisabledText: Double = 0.35
         /// the ink tint over the behind-window blur in dark mode
         static let glassTint: Double = 0.86
+        /// toolbarShade over a GlassToolbar button under the pointer
+        static let toolbarHover: Double = 0.06
+        /// toolbarShade over a GlassToolbar button while pressed
+        static let toolbarPressed: Double = 0.12
     }
     enum Shadow {
         static let window = ThemeShadow(colour: ThemeColour(fixed: .init(0x000000, alpha: 0.28)), x: 0, y: 20, blur: 50)
@@ -219,8 +231,8 @@ enum ThemeTokens {
             static let minDwell: TimeInterval = 0.6
             /// typed letters count as one search while they come this close together
             static let typeahead: TimeInterval = 1
-            /// dismissible: a finished panel closes itself after this
-            static let afterDone: TimeInterval = 4
+            /// dismissible: a finished panel closes itself after this (Drop's shipped value)
+            static let afterDone: TimeInterval = 6
         }
         enum Easing {
             static let easeOut = Animation.timingCurve(0, 0, 0.58, 1, duration: 1)
@@ -294,8 +306,10 @@ enum ThemeTokens {
             static let header: CGFloat = 11
             static let media: CGFloat = 60
             static let mediaGap: CGFloat = 14
-            static let detailsPadY: CGFloat = 11
-            static let detailsRowGap: CGFloat = 7
+            /// Drop's shipped panel card
+            static let detailsPadY: CGFloat = 12
+            /// Drop's shipped panel card
+            static let detailsRowGap: CGFloat = 8
         }
         enum AppWindow {
             static let width: CGFloat = 440
@@ -351,28 +365,28 @@ enum ThemeTokens {
             static let textMin: CGFloat = 11
             static let textMax: CGFloat = 12
         }
+        enum GlassToolbar {
+            static let band: CGFloat = 54
+            static let capsule: CGFloat = 36
+            static let buttonWidth: CGFloat = 32
+            static let buttonHeight: CGFloat = 28
+            static let circle: CGFloat = 36
+            static let icon: CGFloat = 15
+        }
+        enum ModePill {
+            static let height: CGFloat = 36
+            static let minWidth: CGFloat = 216
+            static let icon: CGFloat = 13
+        }
+        enum MenuPanel {
+            static let width: CGFloat = 232
+            static let tallRowHeight: CGFloat = 44
+            static let headerHeight: CGFloat = 22
+        }
     }
     enum App {
-        enum Splito {
-            enum Colour {
-                static let primary = ThemeColour(fixed: .init(0x6559B3))
-                static let lilac = ThemeColour(fixed: .init(0xC9C3FF))
-                static let onPrimary = ThemeColour(fixed: .init(0xFFFFFF))
-            }
-            enum Fonts {
-                static let family = "Plus Jakarta Sans"
-            }
-        }
         enum Pane {
             enum Colour {
-                /// Toolbar and title-row glyphs.
-                static let icon = ThemeColour(light: .init(0x3E3D45), dark: .init(0xD6D5DD), lightContrast: .init(0x17161C), darkContrast: .init(0xF4F4F6))
-                /// The glass toolbar capsule and the mode pill.
-                static let pill = ThemeColour(light: .init(0xFFFFFF), dark: .init(0x2C2B33), lightContrast: .init(0xFFFFFF), darkContrast: .init(0x2C2B33))
-                /// Hover and press shade on glass buttons, at opacity toolbarHover or toolbarPressed.
-                static let shade = ThemeColour(light: .init(0x17161C), dark: .init(0xF4F4F6), lightContrast: .init(0x17161C), darkContrast: .init(0xF4F4F6))
-                /// Record while recording.
-                static let recording = ThemeColour(light: .init(0xD93A2B), dark: .init(0xFF5A4B), lightContrast: .init(0xB0281B), darkContrast: .init(0xFF7A6E))
                 /// Pane's light window: paper glass. A recorded deviation from solid light surfaces.
                 static let glassLight = ThemeColour(fixed: .init(0xF4F4F6, alpha: 0.92))
                 static let frameBody = ThemeColour(light: .init(0x1F1E25), dark: .init(0x0E0E12), lightContrast: .init(0x1F1E25), darkContrast: .init(0x0E0E12))
@@ -392,10 +406,6 @@ enum ThemeTokens {
                 static let toolChipText = ThemeColour(fixed: .init(0xF4F4F6))
                 static let toolChipEdge = ThemeColour(fixed: .init(0xF4F4F6, alpha: 0.3))
             }
-            enum Opacity {
-                static let toolbarHover: Double = 0.06
-                static let toolbarPressed: Double = 0.12
-            }
             enum Motion {
                 enum Spring {
                     static let frameButton = ThemeSpring(response: 0.25, dampingFraction: 0.85)
@@ -408,19 +418,6 @@ enum ThemeTokens {
                     static let titleLeading: CGFloat = 28
                     static let more: CGFloat = 36
                 }
-                enum Toolbar {
-                    static let band: CGFloat = 54
-                    static let capsule: CGFloat = 36
-                    static let buttonWidth: CGFloat = 32
-                    static let buttonHeight: CGFloat = 28
-                    static let circle: CGFloat = 36
-                    static let icon: CGFloat = 15
-                }
-                enum ModePill {
-                    static let height: CGFloat = 36
-                    static let minWidth: CGFloat = 216
-                    static let icon: CGFloat = 13
-                }
                 enum Frame {
                     static let bezel: CGFloat = 10
                     static let bodyRadius: CGFloat = 46
@@ -431,11 +428,6 @@ enum ThemeTokens {
                     static let buttonDepthPressed: CGFloat = 1
                     static let buttonProximity: CGFloat = 24
                     static let buttonHitDepth: CGFloat = 14
-                }
-                enum Menu {
-                    static let width: CGFloat = 232
-                    static let tallRowHeight: CGFloat = 44
-                    static let headerHeight: CGFloat = 22
                 }
                 enum Chip {
                     static let height: CGFloat = 20

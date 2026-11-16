@@ -296,7 +296,7 @@ const jakartaMedium = font('PlusJakartaSans_500Medium.ttf');
  */
 const splitoMark =
   `<path d="M486 270 A216 216 0 0 0 486 702 Z" fill="${splito.color.onPrimary}"/>` +
-  `<path d="M538 322 A216 216 0 0 1 538 754 Z" fill="${splito.color.lilac}"/>`;
+  `<path d="M538 322 A216 216 0 0 1 538 754 Z" fill="${splito.color.brandLilac}"/>`;
 
 /** The Play icon: the app icon's full square; Play rounds the corners itself. */
 function splitoIcon(side) {
@@ -330,7 +330,7 @@ function splitoFeatureGraphic(width, height) {
     height,
     `<g transform="translate(${left} ${markTop}) scale(${scale}) translate(-270 -270)">${splitoMark}</g>` +
       `<path d="${textPath(jakartaExtraBold, splito.name, textLeft, nameBaseline, nameSize, -0.02).d}" fill="${splito.color.onPrimary}"/>` +
-      `<path d="${textPath(jakartaMedium, splito.tagline, textLeft, taglineBaseline, taglineSize, -0.01).d}" fill="${splito.color.lilac}"/>`,
+      `<path d="${textPath(jakartaMedium, splito.tagline, textLeft, taglineBaseline, taglineSize, -0.01).d}" fill="${splito.color.brandLilac}"/>`,
     splito.color.primary,
   );
 }
@@ -379,7 +379,7 @@ function splitoPhoneShot(capture, title, subline) {
       `<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="24"/></filter></defs>` +
       `<rect ${box} fill="#1E1747" opacity="0.45" filter="url(#shadow)" transform="translate(0 16)"/>` +
       `<path d="${centredLine(jakartaExtraBold, title, width, titleBaseline, 76, width - margin * 2, -0.02)}" fill="${splito.color.onPrimary}"/>` +
-      `<path d="${centredLine(jakartaMedium, subline, width, sublineBaseline, 38, width - margin * 2, -0.01)}" fill="${splito.color.lilac}"/>` +
+      `<path d="${centredLine(jakartaMedium, subline, width, sublineBaseline, 38, width - margin * 2, -0.01)}" fill="${splito.color.brandLilac}"/>` +
       `<image x="${shotLeft}" y="${shotTop}" width="${shotWidth}" height="${shotHeight}" clip-path="url(#shot)" href="data:image/png;base64,${data}"/>` +
       `<rect ${box} fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="3"/>`,
     splito.color.primary,

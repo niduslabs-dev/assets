@@ -137,19 +137,19 @@
     },
     "color.role.surfaceCard": {
       "type": "color",
-      "light": "#F4F4F6",
+      "light": "rgba(23, 22, 28, 0.04)",
       "dark": "rgba(244, 244, 246, 0.06)",
-      "lightContrast": "#F4F4F6",
+      "lightContrast": "rgba(23, 22, 28, 0.08)",
       "darkContrast": "rgba(244, 244, 246, 0.12)",
-      "description": "Cards inside a window. No shadow."
+      "description": "Cards inside a window and info cards: ink at 4% over the surface (Drop's shipped fill). No shadow."
     },
     "color.role.surfaceRaised": {
       "type": "color",
-      "light": "#FFFFFF",
+      "light": "#F4F4F6",
       "dark": "rgba(44, 43, 51, 0.9)",
-      "lightContrast": "#FFFFFF",
+      "lightContrast": "#F4F4F6",
       "darkContrast": "#2C2B33",
-      "description": "Selects, fields, popover rows."
+      "description": "Selects and fields: paper on light (Drop's shipped fill), with a hairline."
     },
     "color.role.surfaceMenu": {
       "type": "color",
@@ -239,6 +239,38 @@
       "darkContrast": "#4A4952",
       "description": "A disabled primary on the kit board. In code, disabled is opacity.disabled on the live control."
     },
+    "color.role.toolbarIcon": {
+      "type": "color",
+      "light": "#3E3D45",
+      "dark": "#D6D5DD",
+      "lightContrast": "#17161C",
+      "darkContrast": "#F4F4F6",
+      "description": "Glyphs on a GlassToolbar, a ModePill and an app's title row."
+    },
+    "color.role.surfacePill": {
+      "type": "color",
+      "light": "#FFFFFF",
+      "dark": "#2C2B33",
+      "lightContrast": "#FFFFFF",
+      "darkContrast": "#2C2B33",
+      "description": "The GlassToolbar capsule and circle, and the ModePill."
+    },
+    "color.role.toolbarShade": {
+      "type": "color",
+      "light": "#17161C",
+      "dark": "#F4F4F6",
+      "lightContrast": "#17161C",
+      "darkContrast": "#F4F4F6",
+      "description": "Hover and press shade on glass buttons, at opacity.toolbarHover or opacity.toolbarPressed."
+    },
+    "color.role.recording": {
+      "type": "color",
+      "light": "#D93A2B",
+      "dark": "#FF5A4B",
+      "lightContrast": "#B0281B",
+      "darkContrast": "#FF7A6E",
+      "description": "A recording in progress: GlassToolbar's recording state."
+    },
     "color.role.status.success": {
       "type": "color",
       "light": "#2F7A3A",
@@ -250,10 +282,10 @@
     "color.role.status.good": {
       "type": "color",
       "light": "#2F7A3A",
-      "dark": "#8DBB82",
+      "dark": "#A9D19F",
       "lightContrast": "#225C2B",
-      "darkContrast": "#A9D19F",
-      "description": "Green status icons and text."
+      "darkContrast": "#C5E0BE",
+      "description": "Green status icons and text. Dark is mossOnDark's Increase Contrast step, so a success chip (on highlight) clears 4.5:1 over glass on any wallpaper."
     },
     "color.role.status.warning": {
       "type": "color",
@@ -282,10 +314,10 @@
     "color.role.status.danger": {
       "type": "color",
       "light": "#C4271B",
-      "dark": "#FF8A80",
+      "dark": "#FF9D94",
       "lightContrast": "#9E1D13",
       "darkContrast": "#FFB0A8",
-      "description": "Error icons and error text."
+      "description": "Error icons and error text. Dark clears 4.5:1 on dangerFill over glass on any wallpaper."
     },
     "color.role.status.dangerFill": {
       "type": "color",
@@ -765,6 +797,16 @@
       "value": 0.86,
       "description": "the ink tint over the behind-window blur in dark mode"
     },
+    "opacity.toolbarHover": {
+      "type": "number",
+      "value": 0.06,
+      "description": "toolbarShade over a GlassToolbar button under the pointer"
+    },
+    "opacity.toolbarPressed": {
+      "type": "number",
+      "value": 0.12,
+      "description": "toolbarShade over a GlassToolbar button while pressed"
+    },
     "shadow.window": {
       "type": "shadow",
       "value": {
@@ -902,8 +944,8 @@
     },
     "motion.duration.afterDone": {
       "type": "duration",
-      "value": 4000,
-      "description": "dismissible: a finished panel closes itself after this"
+      "value": 6000,
+      "description": "dismissible: a finished panel closes itself after this (Drop's shipped value)"
     },
     "motion.easing.easeOut": {
       "type": "cubicBezier",
@@ -1126,11 +1168,13 @@
     },
     "size.notificationPanel.detailsPadY": {
       "type": "dimension",
-      "value": 11
+      "value": 12,
+      "description": "Drop's shipped panel card"
     },
     "size.notificationPanel.detailsRowGap": {
       "type": "dimension",
-      "value": 7
+      "value": 8,
+      "description": "Drop's shipped panel card"
     },
     "size.appWindow.width": {
       "type": "dimension",
@@ -1276,62 +1320,53 @@
       "type": "dimension",
       "value": 12
     },
-    "app.splito.color.primary": {
-      "type": "color",
-      "light": "#6559B3",
-      "dark": "#6559B3",
-      "lightContrast": "#6559B3",
-      "darkContrast": "#6559B3"
+    "size.glassToolbar.band": {
+      "type": "dimension",
+      "value": 54
     },
-    "app.splito.color.lilac": {
-      "type": "color",
-      "light": "#C9C3FF",
-      "dark": "#C9C3FF",
-      "lightContrast": "#C9C3FF",
-      "darkContrast": "#C9C3FF"
+    "size.glassToolbar.capsule": {
+      "type": "dimension",
+      "value": 36
     },
-    "app.splito.color.onPrimary": {
-      "type": "color",
-      "light": "#FFFFFF",
-      "dark": "#FFFFFF",
-      "lightContrast": "#FFFFFF",
-      "darkContrast": "#FFFFFF"
+    "size.glassToolbar.buttonWidth": {
+      "type": "dimension",
+      "value": 32
     },
-    "app.splito.font.family": {
-      "type": "fontFamily",
-      "value": "Plus Jakarta Sans"
+    "size.glassToolbar.buttonHeight": {
+      "type": "dimension",
+      "value": 28
     },
-    "app.pane.color.icon": {
-      "type": "color",
-      "light": "#3E3D45",
-      "dark": "#D6D5DD",
-      "lightContrast": "#17161C",
-      "darkContrast": "#F4F4F6",
-      "description": "Toolbar and title-row glyphs."
+    "size.glassToolbar.circle": {
+      "type": "dimension",
+      "value": 36
     },
-    "app.pane.color.pill": {
-      "type": "color",
-      "light": "#FFFFFF",
-      "dark": "#2C2B33",
-      "lightContrast": "#FFFFFF",
-      "darkContrast": "#2C2B33",
-      "description": "The glass toolbar capsule and the mode pill."
+    "size.glassToolbar.icon": {
+      "type": "dimension",
+      "value": 15
     },
-    "app.pane.color.shade": {
-      "type": "color",
-      "light": "#17161C",
-      "dark": "#F4F4F6",
-      "lightContrast": "#17161C",
-      "darkContrast": "#F4F4F6",
-      "description": "Hover and press shade on glass buttons, at opacity toolbarHover or toolbarPressed."
+    "size.modePill.height": {
+      "type": "dimension",
+      "value": 36
     },
-    "app.pane.color.recording": {
-      "type": "color",
-      "light": "#D93A2B",
-      "dark": "#FF5A4B",
-      "lightContrast": "#B0281B",
-      "darkContrast": "#FF7A6E",
-      "description": "Record while recording."
+    "size.modePill.minWidth": {
+      "type": "dimension",
+      "value": 216
+    },
+    "size.modePill.icon": {
+      "type": "dimension",
+      "value": 13
+    },
+    "size.menuPanel.width": {
+      "type": "dimension",
+      "value": 232
+    },
+    "size.menuPanel.tallRowHeight": {
+      "type": "dimension",
+      "value": 44
+    },
+    "size.menuPanel.headerHeight": {
+      "type": "dimension",
+      "value": 22
     },
     "app.pane.color.glassLight": {
       "type": "color",
@@ -1435,14 +1470,6 @@
       "lightContrast": "rgba(244, 244, 246, 0.3)",
       "darkContrast": "rgba(244, 244, 246, 0.3)"
     },
-    "app.pane.opacity.toolbarHover": {
-      "type": "number",
-      "value": 0.06
-    },
-    "app.pane.opacity.toolbarPressed": {
-      "type": "number",
-      "value": 0.12
-    },
     "app.pane.motion.spring.frameButton.response": {
       "type": "number",
       "value": 0.25
@@ -1463,42 +1490,6 @@
     "app.pane.size.titleRow.more": {
       "type": "dimension",
       "value": 36
-    },
-    "app.pane.size.toolbar.band": {
-      "type": "dimension",
-      "value": 54
-    },
-    "app.pane.size.toolbar.capsule": {
-      "type": "dimension",
-      "value": 36
-    },
-    "app.pane.size.toolbar.buttonWidth": {
-      "type": "dimension",
-      "value": 32
-    },
-    "app.pane.size.toolbar.buttonHeight": {
-      "type": "dimension",
-      "value": 28
-    },
-    "app.pane.size.toolbar.circle": {
-      "type": "dimension",
-      "value": 36
-    },
-    "app.pane.size.toolbar.icon": {
-      "type": "dimension",
-      "value": 15
-    },
-    "app.pane.size.modePill.height": {
-      "type": "dimension",
-      "value": 36
-    },
-    "app.pane.size.modePill.minWidth": {
-      "type": "dimension",
-      "value": 216
-    },
-    "app.pane.size.modePill.icon": {
-      "type": "dimension",
-      "value": 13
     },
     "app.pane.size.frame.bezel": {
       "type": "dimension",
@@ -1535,18 +1526,6 @@
     "app.pane.size.frame.buttonHitDepth": {
       "type": "dimension",
       "value": 14
-    },
-    "app.pane.size.menu.width": {
-      "type": "dimension",
-      "value": 232
-    },
-    "app.pane.size.menu.tallRowHeight": {
-      "type": "dimension",
-      "value": 44
-    },
-    "app.pane.size.menu.headerHeight": {
-      "type": "dimension",
-      "value": 22
     },
     "app.pane.size.chip.height": {
       "type": "dimension",

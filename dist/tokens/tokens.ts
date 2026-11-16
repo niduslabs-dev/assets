@@ -102,15 +102,15 @@ export const tokens = {
         "darkContrast": "#232229"
       },
       "surfaceCard": {
-        "light": "#F4F4F6",
+        "light": "rgba(23, 22, 28, 0.04)",
         "dark": "rgba(244, 244, 246, 0.06)",
-        "lightContrast": "#F4F4F6",
+        "lightContrast": "rgba(23, 22, 28, 0.08)",
         "darkContrast": "rgba(244, 244, 246, 0.12)"
       },
       "surfaceRaised": {
-        "light": "#FFFFFF",
+        "light": "#F4F4F6",
         "dark": "rgba(44, 43, 51, 0.9)",
-        "lightContrast": "#FFFFFF",
+        "lightContrast": "#F4F4F6",
         "darkContrast": "#2C2B33"
       },
       "surfaceMenu": {
@@ -179,6 +179,30 @@ export const tokens = {
         "lightContrast": "#C9C8CF",
         "darkContrast": "#4A4952"
       },
+      "toolbarIcon": {
+        "light": "#3E3D45",
+        "dark": "#D6D5DD",
+        "lightContrast": "#17161C",
+        "darkContrast": "#F4F4F6"
+      },
+      "surfacePill": {
+        "light": "#FFFFFF",
+        "dark": "#2C2B33",
+        "lightContrast": "#FFFFFF",
+        "darkContrast": "#2C2B33"
+      },
+      "toolbarShade": {
+        "light": "#17161C",
+        "dark": "#F4F4F6",
+        "lightContrast": "#17161C",
+        "darkContrast": "#F4F4F6"
+      },
+      "recording": {
+        "light": "#D93A2B",
+        "dark": "#FF5A4B",
+        "lightContrast": "#B0281B",
+        "darkContrast": "#FF7A6E"
+      },
       "status": {
         "success": {
           "light": "#2F7A3A",
@@ -188,9 +212,9 @@ export const tokens = {
         },
         "good": {
           "light": "#2F7A3A",
-          "dark": "#8DBB82",
+          "dark": "#A9D19F",
           "lightContrast": "#225C2B",
-          "darkContrast": "#A9D19F"
+          "darkContrast": "#C5E0BE"
         },
         "warning": {
           "light": "#B25E00",
@@ -212,7 +236,7 @@ export const tokens = {
         },
         "danger": {
           "light": "#C4271B",
-          "dark": "#FF8A80",
+          "dark": "#FF9D94",
           "lightContrast": "#9E1D13",
           "darkContrast": "#FFB0A8"
         },
@@ -446,7 +470,9 @@ export const tokens = {
     "pressShade": 0.08,
     "menuIdleText": 0.78,
     "menuDisabledText": 0.35,
-    "glassTint": 0.86
+    "glassTint": 0.86,
+    "toolbarHover": 0.06,
+    "toolbarPressed": 0.12
   },
   "shadow": {
     "window": {
@@ -523,7 +549,7 @@ export const tokens = {
       "revealCadence": 550,
       "minDwell": 600,
       "typeahead": 1000,
-      "afterDone": 4000
+      "afterDone": 6000
     },
     "easing": {
       "easeOut": [
@@ -606,8 +632,8 @@ export const tokens = {
       "header": 11,
       "media": 60,
       "mediaGap": 14,
-      "detailsPadY": 11,
-      "detailsRowGap": 7
+      "detailsPadY": 12,
+      "detailsRowGap": 8
     },
     "appWindow": {
       "width": 440,
@@ -662,60 +688,29 @@ export const tokens = {
     "chip": {
       "textMin": 11,
       "textMax": 12
+    },
+    "glassToolbar": {
+      "band": 54,
+      "capsule": 36,
+      "buttonWidth": 32,
+      "buttonHeight": 28,
+      "circle": 36,
+      "icon": 15
+    },
+    "modePill": {
+      "height": 36,
+      "minWidth": 216,
+      "icon": 13
+    },
+    "menuPanel": {
+      "width": 232,
+      "tallRowHeight": 44,
+      "headerHeight": 22
     }
   },
   "app": {
-    "splito": {
-      "color": {
-        "primary": {
-          "light": "#6559B3",
-          "dark": "#6559B3",
-          "lightContrast": "#6559B3",
-          "darkContrast": "#6559B3"
-        },
-        "lilac": {
-          "light": "#C9C3FF",
-          "dark": "#C9C3FF",
-          "lightContrast": "#C9C3FF",
-          "darkContrast": "#C9C3FF"
-        },
-        "onPrimary": {
-          "light": "#FFFFFF",
-          "dark": "#FFFFFF",
-          "lightContrast": "#FFFFFF",
-          "darkContrast": "#FFFFFF"
-        }
-      },
-      "font": {
-        "family": "Plus Jakarta Sans"
-      }
-    },
     "pane": {
       "color": {
-        "icon": {
-          "light": "#3E3D45",
-          "dark": "#D6D5DD",
-          "lightContrast": "#17161C",
-          "darkContrast": "#F4F4F6"
-        },
-        "pill": {
-          "light": "#FFFFFF",
-          "dark": "#2C2B33",
-          "lightContrast": "#FFFFFF",
-          "darkContrast": "#2C2B33"
-        },
-        "shade": {
-          "light": "#17161C",
-          "dark": "#F4F4F6",
-          "lightContrast": "#17161C",
-          "darkContrast": "#F4F4F6"
-        },
-        "recording": {
-          "light": "#D93A2B",
-          "dark": "#FF5A4B",
-          "lightContrast": "#B0281B",
-          "darkContrast": "#FF7A6E"
-        },
         "glassLight": {
           "light": "rgba(244, 244, 246, 0.92)",
           "dark": "rgba(244, 244, 246, 0.92)",
@@ -801,10 +796,6 @@ export const tokens = {
           "darkContrast": "rgba(244, 244, 246, 0.3)"
         }
       },
-      "opacity": {
-        "toolbarHover": 0.06,
-        "toolbarPressed": 0.12
-      },
       "motion": {
         "spring": {
           "frameButton": {
@@ -822,19 +813,6 @@ export const tokens = {
           "titleLeading": 28,
           "more": 36
         },
-        "toolbar": {
-          "band": 54,
-          "capsule": 36,
-          "buttonWidth": 32,
-          "buttonHeight": 28,
-          "circle": 36,
-          "icon": 15
-        },
-        "modePill": {
-          "height": 36,
-          "minWidth": 216,
-          "icon": 13
-        },
         "frame": {
           "bezel": 10,
           "bodyRadius": 46,
@@ -845,11 +823,6 @@ export const tokens = {
           "buttonDepthPressed": 1,
           "buttonProximity": 24,
           "buttonHitDepth": 14
-        },
-        "menu": {
-          "width": 232,
-          "tallRowHeight": 44,
-          "headerHeight": 22
         },
         "chip": {
           "height": 20,

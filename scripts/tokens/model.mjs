@@ -5,6 +5,12 @@
  */
 
 export const MODES_EXTENSION = 'dev.niduslabs.modes';
+/**
+ * On an `app.<name>` group: the only outputs that carry it (for example
+ * `["splito"]`). An app with its own language keeps it out of the shared
+ * Swift, CSS, TypeScript and kit outputs.
+ */
+export const OUTPUTS_EXTENSION = 'dev.niduslabs.outputs';
 /** The modes a colour can carry besides its `$value`, which is light. */
 export const MODES = ['light', 'dark', 'lightContrast', 'darkContrast'];
 /** What a mode falls back to when a token leaves it out. */
@@ -40,6 +46,9 @@ export function flatten(source) {
       checkColour(path, token.$value);
       const given = { light: token.$value, ...token.$extensions?.[MODES_EXTENSION] };
       for (const value of Object.values(given)) checkColour(path, value);
+      entry.modes = Object.fromEntries(MODES.map((mode) => [mode, pickMode(given, mode)]));
+    } else if (token.$extensions?.[MODES_EXTENSION]) {
+      const given = { light: token.$value, ...token.$extensions[MODES_EXTENSION] };
       entry.modes = Object.fromEntries(MODES.map((mode) => [mode, pickMode(given, mode)]));
     }
     out.push(entry);
@@ -127,3 +136,15 @@ export function springPhysics(response, dampingFraction) {
 }
 
 export const GENERATED_NOTE = 'Generated from tokens.json by scripts/tokens/build.mjs (assets repo). Do not edit.';
+
+/**
+ * The path prefixes of app groups that name their own outputs, mapped to those
+ * outputs (`{ 'app.splito': ['splito'] }`).
+ */
+export function scopedGroups(source) {
+  return Object.fromEntries(
+    Object.entries(source.app ?? {})
+      .filter(([name, group]) => !name.startsWith('$') && group.$extensions?.[OUTPUTS_EXTENSION])
+      .map(([name, group]) => [`app.${name}`, group.$extensions[OUTPUTS_EXTENSION]]),
+  );
+}
