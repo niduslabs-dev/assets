@@ -18,6 +18,7 @@ The studio's logo, icons and social images. *Nidus* is Latin for "nest": the mar
 | `social/` | `og-image.png` (1200×630), `github-social-preview.png` (1280×640) | Link previews and the GitHub social preview. |
 | `stores/` | `google-play-header.png` (4096×2304), `google-play-icon-512.png` | The Google Play developer page. 24-bit PNGs, since Play refuses transparency. |
 | `apps/splito/` | `google-play-icon-512.png`, `google-play-feature-graphic.png` (1024×500) | Splito's store listing: its icon redrawn from the app's shapes, and its name in Plus Jakarta Sans, the app's typeface. |
+| `apps/drop/` | `icon.svg`, `icon-small.svg`, `Drop.iconset/` (every macOS size), `Drop.icns` | Drop's app icon, "The Slot": an app tile carrying the Nidus mark drops into a glowing moss slot, on Apple's 1024 grid. The small cut is used at 32 px and below. `Drop.icns` is packed from the iconset with `iconutil -c icns apps/drop/Drop.iconset -o apps/drop/Drop.icns` after `npm run build`. |
 | `tokens.json` | Colours, byline, wordmark type | The single source for the values below. |
 
 ## Colours

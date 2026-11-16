@@ -385,3 +385,90 @@ function splitoPhoneShot(capture, title, subline) {
 for (const [name, title, subline] of phoneShots) {
   write(`apps/splito/screenshots/${name}.png`, opaquePng(splitoPhoneShot(`${name}.png`, title, subline), 1080));
 }
+
+// Drop: the macOS app icon ("The Slot"), drawn on Apple's 1024 grid.
+
+/**
+ * Drop's artwork in a 100-unit box: an app tile carrying the Nidus mark drops into a
+ * glowing moss slot on an ink ground. `small` is the cut for 32 px and below: no
+ * streaks or outlined mark, a bigger tile and a thicker slot, so it still reads.
+ */
+function dropArt(small) {
+  const slotLight = '#C3EBB8';
+  const defs =
+    `<defs>` +
+    `<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2A33"/><stop offset="0.55" stop-color="${ink}"/><stop offset="1" stop-color="#0D0C11"/></linearGradient>` +
+    `<linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E6E5EB"/></linearGradient>` +
+    `<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="${slotLight}"/><stop offset="0.45" stop-color="${mossOnDark}" stop-opacity="0.85"/><stop offset="1" stop-color="${moss}" stop-opacity="0"/></radialGradient>` +
+    `<linearGradient id="slot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050507"/><stop offset="1" stop-color="#1E3A1C"/></linearGradient>` +
+    `<linearGradient id="lip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${mossOnDark}"/><stop offset="1" stop-color="#3B5D38"/></linearGradient>` +
+    `<linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.16"/><stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>` +
+    `<clipPath id="sq"><rect width="100" height="100" rx="22.4"/></clipPath>` +
+    `<clipPath id="above"><rect width="100" height="66.5"/></clipPath>` +
+    `</defs>`;
+  if (small) {
+    return (
+      defs +
+      `<g clip-path="url(#sq)"><rect width="100" height="100" fill="${ink}"/>` +
+      `<g clip-path="url(#above)"><g transform="rotate(-6 50 46)"><rect x="28" y="22" width="44" height="44" rx="11" fill="${paper}"/><circle cx="50" cy="47" r="7" fill="${moss}"/></g></g>` +
+      `<ellipse cx="50" cy="70" rx="44" ry="15" fill="${mossOnDark}" opacity="0.55"/>` +
+      `<rect x="12" y="64" width="76" height="11" rx="5.5" fill="#050507"/><rect x="12" y="64" width="76" height="3.4" rx="1.7" fill="${slotLight}"/></g>`
+    );
+  }
+  const streaks = [
+    [36, 10, 24, 2.2, 0.35],
+    [50, 6, 20, 2.6, 0.6],
+    [64, 12, 26, 2.2, 0.35],
+  ]
+    .map(([x, y1, y2, w, o]) => `<path d="M${x} ${y1}V${y2}" stroke="${mossOnDark}" stroke-width="${w}" stroke-linecap="round" opacity="${o}"/>`)
+    .join('');
+  return (
+    defs +
+    `<g clip-path="url(#sq)"><rect width="100" height="100" fill="url(#g)"/><rect width="100" height="100" fill="url(#sheen)"/>${streaks}` +
+    `<g clip-path="url(#above)"><g transform="rotate(-6 50 48)">` +
+    `<rect x="34.7" y="33.4" width="33" height="33" rx="8.5" fill="#000" opacity="0.25"/>` +
+    `<rect x="33.5" y="31" width="33" height="33" rx="8.5" fill="url(#face)"/>` +
+    `<rect x="39.5" y="37" width="21" height="21" rx="7" fill="none" stroke="${ink}" stroke-width="3"/>` +
+    `<circle cx="50" cy="51.5" r="3.6" fill="${moss}"/>` +
+    `<rect x="33.5" y="31" width="33" height="14" rx="8.5" fill="#FFFFFF" opacity="0.45"/></g></g>` +
+    `<ellipse cx="50" cy="70" rx="42" ry="16" fill="url(#glow)" opacity="0.95"/>` +
+    `<rect x="17" y="64" width="66" height="9" rx="4.5" fill="url(#slot)"/>` +
+    `<rect x="17" y="64" width="66" height="2.4" rx="1.2" fill="${slotLight}" opacity="0.9"/>` +
+    `<path d="M17 71.5h66v3a4 4 0 0 1-4 4h-58a4 4 0 0 1-4-4z" fill="url(#lip)"/></g>` +
+    `<rect x="0.6" y="0.6" width="98.8" height="98.8" rx="22" fill="none" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="1.2"/>`
+  );
+}
+
+/** Apple's macOS icon grid: artwork 824 square at 100,100 in a 1024 canvas, with a soft shadow. */
+const appleGrid = { canvas: 1024, inset: 100, art: 824 };
+
+function dropIcon(small) {
+  const { canvas, inset, art } = appleGrid;
+  const scale = art / 100;
+  const shadow =
+    `<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur stdDeviation="14"/></filter>` +
+    `<rect x="${inset}" y="${inset + 12}" width="${art}" height="${art}" rx="${art * 0.224}" fill="#000" opacity="0.32" filter="url(#shadow)"/>`;
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${canvas}" height="${canvas}" viewBox="0 0 ${canvas} ${canvas}">` +
+    `${shadow}<g transform="translate(${inset} ${inset}) scale(${scale})">${dropArt(small)}</g></svg>`
+  );
+}
+
+write('apps/drop/icon.svg', dropIcon(false));
+write('apps/drop/icon-small.svg', dropIcon(true));
+/** Every slot of a macOS .iconset, with the small cut where the icon is 32 px or less. */
+const iconset = [
+  ['icon_16x16.png', 16],
+  ['icon_16x16@2x.png', 32],
+  ['icon_32x32.png', 32],
+  ['icon_32x32@2x.png', 64],
+  ['icon_128x128.png', 128],
+  ['icon_128x128@2x.png', 256],
+  ['icon_256x256.png', 256],
+  ['icon_256x256@2x.png', 512],
+  ['icon_512x512.png', 512],
+  ['icon_512x512@2x.png', 1024],
+];
+for (const [name, side] of iconset) {
+  write(`apps/drop/Drop.iconset/${name}`, png(dropIcon(side <= 32), side));
+}
