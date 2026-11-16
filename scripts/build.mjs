@@ -13,9 +13,10 @@ import { Resvg } from '@resvg/resvg-js';
 import opentype from 'opentype.js';
 
 import { paneIcon, paneSmallIcon } from './pane-icon.mjs';
+import { loadBrandTokens } from './tokens/brand.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const tokens = JSON.parse(readFileSync(join(root, 'tokens.json'), 'utf8'));
+const tokens = loadBrandTokens(join(root, 'tokens.json'));
 const { ink, paper, moss, mossOnDark, muted, mutedOnDark } = tokens.color;
 const byline = tokens.byline;
 

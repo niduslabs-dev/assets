@@ -1,0 +1,1518 @@
+{
+  "$note": "Generated from tokens.json by scripts/tokens/build.mjs (assets repo). Do not edit.",
+  "modes": [
+    "light",
+    "dark",
+    "lightContrast",
+    "darkContrast"
+  ],
+  "tokens": {
+    "color.brand.ink": {
+      "type": "color",
+      "light": "#17161C",
+      "dark": "#17161C",
+      "lightContrast": "#17161C",
+      "darkContrast": "#17161C",
+      "description": "The tile, text, dark grounds."
+    },
+    "color.brand.paper": {
+      "type": "color",
+      "light": "#F4F4F6",
+      "dark": "#F4F4F6",
+      "lightContrast": "#F4F4F6",
+      "darkContrast": "#F4F4F6",
+      "description": "Light grounds; the tile on dark."
+    },
+    "color.brand.moss": {
+      "type": "color",
+      "light": "#4F7A4A",
+      "dark": "#4F7A4A",
+      "lightContrast": "#4F7A4A",
+      "darkContrast": "#4F7A4A",
+      "description": "The seed on light; the one action colour."
+    },
+    "color.brand.mossOnDark": {
+      "type": "color",
+      "light": "#8DBB82",
+      "dark": "#8DBB82",
+      "lightContrast": "#8DBB82",
+      "darkContrast": "#8DBB82",
+      "description": "The seed, links and accent icons on dark."
+    },
+    "color.brand.muted": {
+      "type": "color",
+      "light": "#6B6A73",
+      "dark": "#6B6A73",
+      "lightContrast": "#6B6A73",
+      "darkContrast": "#6B6A73",
+      "description": "'Labs' in the wordmark and brand secondary text on light. UI secondary text is role.textSecondary."
+    },
+    "color.brand.mutedOnDark": {
+      "type": "color",
+      "light": "#B9B8C2",
+      "dark": "#B9B8C2",
+      "lightContrast": "#B9B8C2",
+      "darkContrast": "#B9B8C2",
+      "description": "The same, on dark."
+    },
+    "color.role.textPrimary": {
+      "type": "color",
+      "light": "#17161C",
+      "dark": "#F4F4F6",
+      "lightContrast": "#000000",
+      "darkContrast": "#FFFFFF",
+      "description": "Body text and titles."
+    },
+    "color.role.textSecondary": {
+      "type": "color",
+      "light": "#64636C",
+      "dark": "#B9B8C2",
+      "lightContrast": "#3E3D45",
+      "darkContrast": "#DCDBE3",
+      "description": "Captions, meta, group labels. Muted darkened until 4.5:1 is measured on every surface."
+    },
+    "color.role.link": {
+      "type": "color",
+      "light": "#466E41",
+      "dark": "#8DBB82",
+      "lightContrast": "#3B5D38",
+      "darkContrast": "#A9D19F",
+      "description": "Links and accent icons. A moss shade that clears 4.5:1."
+    },
+    "color.role.actionPrimary": {
+      "type": "color",
+      "light": "#4F7A4A",
+      "dark": "#4F7A4A",
+      "lightContrast": "#3B5D38",
+      "darkContrast": "#3B5D38",
+      "description": "The fill of the one primary action per surface."
+    },
+    "color.role.actionPrimaryHover": {
+      "type": "color",
+      "light": "#456B41",
+      "dark": "#527F4C",
+      "lightContrast": "#34522F",
+      "darkContrast": "#3B5D38",
+      "description": "Primary fill under the pointer. Lighter on dark."
+    },
+    "color.role.actionPrimaryPressed": {
+      "type": "color",
+      "light": "#3B5D38",
+      "dark": "#456B41",
+      "lightContrast": "#2C4529",
+      "darkContrast": "#34522F",
+      "description": "Primary fill while pressed."
+    },
+    "color.role.onAction": {
+      "type": "color",
+      "light": "#FFFFFF",
+      "dark": "#FFFFFF",
+      "lightContrast": "#FFFFFF",
+      "darkContrast": "#FFFFFF",
+      "description": "Label on the primary fill. 4.9:1 on moss."
+    },
+    "color.role.actionSecondary": {
+      "type": "color",
+      "light": "#F4F4F6",
+      "dark": "rgba(44, 43, 51, 0.9)",
+      "lightContrast": "#F4F4F6",
+      "darkContrast": "#2C2B33",
+      "description": "Secondary button fill, with a hairline."
+    },
+    "color.role.surfaceBase": {
+      "type": "color",
+      "light": "#FFFFFF",
+      "dark": "rgba(28, 27, 34, 0.86)",
+      "lightContrast": "#FFFFFF",
+      "darkContrast": "#232229",
+      "description": "Window and panel background, including the title bar. Dark is ink glass over a behind-window blur."
+    },
+    "color.role.surfaceBaseSolid": {
+      "type": "color",
+      "light": "#FFFFFF",
+      "dark": "#232229",
+      "lightContrast": "#FFFFFF",
+      "darkContrast": "#232229",
+      "description": "surfaceBase with Reduce Transparency on, or where no blur is drawn."
+    },
+    "color.role.surfaceCard": {
+      "type": "color",
+      "light": "#F4F4F6",
+      "dark": "rgba(244, 244, 246, 0.06)",
+      "lightContrast": "#F4F4F6",
+      "darkContrast": "rgba(244, 244, 246, 0.12)",
+      "description": "Cards inside a window. No shadow."
+    },
+    "color.role.surfaceRaised": {
+      "type": "color",
+      "light": "#FFFFFF",
+      "dark": "rgba(44, 43, 51, 0.9)",
+      "lightContrast": "#FFFFFF",
+      "darkContrast": "#2C2B33",
+      "description": "Selects, fields, popover rows."
+    },
+    "color.role.surfaceMenu": {
+      "type": "color",
+      "light": "#FFFFFF",
+      "dark": "rgba(36, 35, 43, 0.96)",
+      "lightContrast": "#FFFFFF",
+      "darkContrast": "#24232B",
+      "description": "Menu panels. Dark sits over a behind-window blur."
+    },
+    "color.role.hairline": {
+      "type": "color",
+      "light": "rgba(23, 22, 28, 0.12)",
+      "dark": "rgba(244, 244, 246, 0.12)",
+      "lightContrast": "#5E5D66",
+      "darkContrast": "#A09FA8",
+      "description": "The thin edge on cards and controls."
+    },
+    "color.role.controlBoundary": {
+      "type": "color",
+      "light": "#8A8992",
+      "dark": "#7A7983",
+      "lightContrast": "#5E5D66",
+      "darkContrast": "#A09FA8",
+      "description": "Edges that carry a control's state. 3:1 against the surface."
+    },
+    "color.role.focusRing": {
+      "type": "color",
+      "light": "#4F7A4A",
+      "dark": "#8DBB82",
+      "lightContrast": "#3B5D38",
+      "darkContrast": "#A9D19F",
+      "description": "The keyboard focus ring. Solid, at least 3:1."
+    },
+    "color.role.switchOff": {
+      "type": "color",
+      "light": "#D8D7DE",
+      "dark": "#4A4952",
+      "lightContrast": "#D8D7DE",
+      "darkContrast": "#4A4952",
+      "description": "An off switch's track."
+    },
+    "color.role.highlight": {
+      "type": "color",
+      "light": "rgba(79, 122, 74, 0.1)",
+      "dark": "rgba(141, 187, 130, 0.16)",
+      "lightContrast": "rgba(79, 122, 74, 0.2)",
+      "darkContrast": "rgba(141, 187, 130, 0.3)",
+      "description": "Hovered or keyboard-highlighted menu row."
+    },
+    "color.role.openRing": {
+      "type": "color",
+      "light": "rgba(79, 122, 74, 0.25)",
+      "dark": "rgba(141, 187, 130, 0.35)",
+      "lightContrast": "rgba(79, 122, 74, 0.25)",
+      "darkContrast": "rgba(141, 187, 130, 0.35)",
+      "description": "The soft ring a select wears while its menu is open."
+    },
+    "color.role.track": {
+      "type": "color",
+      "light": "rgba(23, 22, 28, 0.08)",
+      "dark": "rgba(244, 244, 246, 0.1)",
+      "lightContrast": "rgba(23, 22, 28, 0.08)",
+      "darkContrast": "rgba(244, 244, 246, 0.1)",
+      "description": "A progress bar's unfilled part."
+    },
+    "color.role.scrim": {
+      "type": "color",
+      "light": "rgba(23, 22, 28, 0.2)",
+      "dark": "rgba(0, 0, 0, 0.36)",
+      "lightContrast": "rgba(23, 22, 28, 0.2)",
+      "darkContrast": "rgba(0, 0, 0, 0.36)",
+      "description": "Dim over a window behind a sheet."
+    },
+    "color.role.disabledFill": {
+      "type": "color",
+      "light": "#C9C8CF",
+      "dark": "#4A4952",
+      "lightContrast": "#C9C8CF",
+      "darkContrast": "#4A4952",
+      "description": "A disabled primary on the kit board. In code, disabled is opacity.disabled on the live control."
+    },
+    "color.role.status.success": {
+      "type": "color",
+      "light": "#2F7A3A",
+      "dark": "#2F7A3A",
+      "lightContrast": "#225C2B",
+      "darkContrast": "#225C2B",
+      "description": "Fill of a done badge. White on it is 5.3:1."
+    },
+    "color.role.status.good": {
+      "type": "color",
+      "light": "#2F7A3A",
+      "dark": "#8DBB82",
+      "lightContrast": "#225C2B",
+      "darkContrast": "#A9D19F",
+      "description": "Green status icons and text."
+    },
+    "color.role.status.warning": {
+      "type": "color",
+      "light": "#B25E00",
+      "dark": "#F0A44B",
+      "lightContrast": "#8A4800",
+      "darkContrast": "#FFC27A",
+      "description": "Warning icons and a warning action's label."
+    },
+    "color.role.status.warningText": {
+      "type": "color",
+      "light": "#6B4300",
+      "dark": "#F5D3A1",
+      "lightContrast": "#4A2F00",
+      "darkContrast": "#FFE7C4",
+      "description": "Text on a warning fill."
+    },
+    "color.role.status.warningFill": {
+      "type": "color",
+      "light": "#FFF4E0",
+      "dark": "rgba(255, 170, 60, 0.14)",
+      "lightContrast": "#FFF4E0",
+      "darkContrast": "rgba(255, 170, 60, 0.2)",
+      "description": "A warning card's fill."
+    },
+    "color.role.status.danger": {
+      "type": "color",
+      "light": "#C4271B",
+      "dark": "#FF8A80",
+      "lightContrast": "#9E1D13",
+      "darkContrast": "#FFB0A8",
+      "description": "Error icons and error text."
+    },
+    "color.role.status.dangerFill": {
+      "type": "color",
+      "light": "#FDECEA",
+      "dark": "rgba(255, 90, 80, 0.14)",
+      "lightContrast": "#FDECEA",
+      "darkContrast": "rgba(255, 90, 80, 0.2)",
+      "description": "An error card's fill, and a field's error halo."
+    },
+    "font.family.brand": {
+      "type": "fontFamily",
+      "value": "Manrope",
+      "description": "Wordmark, byline and onboarding headings only."
+    },
+    "font.family.system": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "font.family.rounded": {
+      "type": "fontFamily",
+      "value": [
+        "ui-rounded",
+        "SF Pro Rounded",
+        "-apple-system",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Numbers that change, and big figures."
+    },
+    "font.family.mono": {
+      "type": "fontFamily",
+      "value": [
+        "ui-monospace",
+        "SF Mono",
+        "Menlo",
+        "monospace"
+      ],
+      "description": "File paths."
+    },
+    "font.wordmark.nidus": {
+      "type": "fontWeight",
+      "value": 800
+    },
+    "font.wordmark.labs": {
+      "type": "fontWeight",
+      "value": 500
+    },
+    "space.xxxs": {
+      "type": "dimension",
+      "value": 2,
+      "description": "hairline gaps; caption under title"
+    },
+    "space.xxs": {
+      "type": "dimension",
+      "value": 4,
+      "description": "group-label inset"
+    },
+    "space.xs": {
+      "type": "dimension",
+      "value": 6,
+      "description": "label to card; title to info icon"
+    },
+    "space.s": {
+      "type": "dimension",
+      "value": 8,
+      "description": "between buttons and list cards"
+    },
+    "space.m": {
+      "type": "dimension",
+      "value": 12,
+      "description": "row vertical padding; stacked buttons"
+    },
+    "space.l": {
+      "type": "dimension",
+      "value": 16,
+      "description": "row horizontal padding; between groups; divider inset"
+    },
+    "space.xl": {
+      "type": "dimension",
+      "value": 24,
+      "description": "window content inset; sheet padding"
+    },
+    "space.xxl": {
+      "type": "dimension",
+      "value": 32,
+      "description": "page title to first group"
+    },
+    "type.display.family": {
+      "type": "fontFamily",
+      "value": [
+        "ui-rounded",
+        "SF Pro Rounded",
+        "-apple-system",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Numbers that change, and big figures."
+    },
+    "type.display.size": {
+      "type": "dimension",
+      "value": 56
+    },
+    "type.display.weight": {
+      "type": "fontWeight",
+      "value": 700
+    },
+    "type.hero.family": {
+      "type": "fontFamily",
+      "value": [
+        "ui-rounded",
+        "SF Pro Rounded",
+        "-apple-system",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Numbers that change, and big figures."
+    },
+    "type.hero.size": {
+      "type": "dimension",
+      "value": 36
+    },
+    "type.hero.weight": {
+      "type": "fontWeight",
+      "value": 700
+    },
+    "type.title.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.title.size": {
+      "type": "dimension",
+      "value": 26
+    },
+    "type.title.weight": {
+      "type": "fontWeight",
+      "value": 600
+    },
+    "type.windowTitle.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.windowTitle.size": {
+      "type": "dimension",
+      "value": 22
+    },
+    "type.windowTitle.weight": {
+      "type": "fontWeight",
+      "value": 600
+    },
+    "type.pageTitle.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.pageTitle.size": {
+      "type": "dimension",
+      "value": 20
+    },
+    "type.pageTitle.weight": {
+      "type": "fontWeight",
+      "value": 600
+    },
+    "type.panelTitle.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.panelTitle.size": {
+      "type": "dimension",
+      "value": 17
+    },
+    "type.panelTitle.weight": {
+      "type": "fontWeight",
+      "value": 600
+    },
+    "type.panelTitle.tracking": {
+      "type": "dimension",
+      "value": -0.17
+    },
+    "type.sectionTitle.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.sectionTitle.size": {
+      "type": "dimension",
+      "value": 15
+    },
+    "type.sectionTitle.weight": {
+      "type": "fontWeight",
+      "value": 600
+    },
+    "type.body.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.body.size": {
+      "type": "dimension",
+      "value": 13
+    },
+    "type.body.weight": {
+      "type": "fontWeight",
+      "value": 400
+    },
+    "type.bodyEmphasis.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.bodyEmphasis.size": {
+      "type": "dimension",
+      "value": 13
+    },
+    "type.bodyEmphasis.weight": {
+      "type": "fontWeight",
+      "value": 600
+    },
+    "type.callout.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.callout.size": {
+      "type": "dimension",
+      "value": 12
+    },
+    "type.callout.weight": {
+      "type": "fontWeight",
+      "value": 400
+    },
+    "type.caption.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.caption.size": {
+      "type": "dimension",
+      "value": 11
+    },
+    "type.caption.weight": {
+      "type": "fontWeight",
+      "value": 400
+    },
+    "type.groupLabel.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.groupLabel.size": {
+      "type": "dimension",
+      "value": 11
+    },
+    "type.groupLabel.weight": {
+      "type": "fontWeight",
+      "value": 500
+    },
+    "type.micro.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.micro.size": {
+      "type": "dimension",
+      "value": 10
+    },
+    "type.micro.weight": {
+      "type": "fontWeight",
+      "value": 600
+    },
+    "radius.xs": {
+      "type": "dimension",
+      "value": 4
+    },
+    "radius.sm": {
+      "type": "dimension",
+      "value": 6
+    },
+    "radius.control": {
+      "type": "dimension",
+      "value": 8,
+      "description": "value-holding controls: select, field, segmented track"
+    },
+    "radius.menuRow": {
+      "type": "dimension",
+      "value": 7,
+      "description": "a row inside a menu panel"
+    },
+    "radius.menu": {
+      "type": "dimension",
+      "value": 10,
+      "description": "menu panels; cards inside a 400 pt panel"
+    },
+    "radius.card": {
+      "type": "dimension",
+      "value": 14,
+      "description": "containers at window scale, continuous corners"
+    },
+    "radius.panel": {
+      "type": "dimension",
+      "value": 18,
+      "description": "notification panels"
+    },
+    "radius.pill": {
+      "type": "dimension",
+      "value": 999,
+      "description": "capsules: every action"
+    },
+    "radius.iconTileRatio": {
+      "type": "number",
+      "value": 0.26,
+      "description": "an icon tile's radius as a share of its size"
+    },
+    "border.hairline": {
+      "type": "dimension",
+      "value": 0.5,
+      "description": "cards and menu panels"
+    },
+    "border.control": {
+      "type": "dimension",
+      "value": 1,
+      "description": "selects, fields, secondary buttons"
+    },
+    "border.hairlineIncreasedContrast": {
+      "type": "dimension",
+      "value": 1,
+      "description": "the hairline with Increase Contrast on"
+    },
+    "border.focusRing": {
+      "type": "dimension",
+      "value": 2,
+      "description": "ring width"
+    },
+    "border.focusOffset": {
+      "type": "dimension",
+      "value": 2,
+      "description": "gap between a control and its ring"
+    },
+    "border.openRing": {
+      "type": "dimension",
+      "value": 3,
+      "description": "a select's ring while open"
+    },
+    "opacity.disabled": {
+      "type": "number",
+      "value": 0.45,
+      "description": "a disabled or dependent control, in place"
+    },
+    "opacity.hoverShade": {
+      "type": "number",
+      "value": 0.04,
+      "description": "ink over a secondary control under the pointer"
+    },
+    "opacity.pressShade": {
+      "type": "number",
+      "value": 0.08,
+      "description": "ink over a secondary control while pressed"
+    },
+    "opacity.menuIdleText": {
+      "type": "number",
+      "value": 0.78
+    },
+    "opacity.menuDisabledText": {
+      "type": "number",
+      "value": 0.35
+    },
+    "opacity.progressCeiling": {
+      "type": "number",
+      "value": 0.9,
+      "description": "determinate progress never passes this until the work is done"
+    },
+    "shadow.window": {
+      "type": "shadow",
+      "value": {
+        "color": "rgba(0, 0, 0, 0.28)",
+        "offsetX": 0,
+        "offsetY": 20,
+        "blur": 50,
+        "spread": 0
+      }
+    },
+    "shadow.menu": {
+      "type": "shadow",
+      "value": {
+        "color": "rgba(0, 0, 0, 0.22)",
+        "offsetX": 0,
+        "offsetY": 10,
+        "blur": 28,
+        "spread": 0
+      }
+    },
+    "shadow.knob": {
+      "type": "shadow",
+      "value": {
+        "color": "rgba(0, 0, 0, 0.25)",
+        "offsetX": 0,
+        "offsetY": 1,
+        "blur": 2,
+        "spread": 0
+      }
+    },
+    "motion.spring.swap.response": {
+      "type": "number",
+      "value": 0.4
+    },
+    "motion.spring.swap.damping": {
+      "type": "number",
+      "value": 0.9
+    },
+    "motion.spring.slideIn.response": {
+      "type": "number",
+      "value": 0.4
+    },
+    "motion.spring.slideIn.damping": {
+      "type": "number",
+      "value": 0.9
+    },
+    "motion.spring.thumb.response": {
+      "type": "number",
+      "value": 0.34
+    },
+    "motion.spring.thumb.damping": {
+      "type": "number",
+      "value": 0.86
+    },
+    "motion.spring.toggle.response": {
+      "type": "number",
+      "value": 0.25
+    },
+    "motion.spring.toggle.damping": {
+      "type": "number",
+      "value": 0.85
+    },
+    "motion.spring.check.response": {
+      "type": "number",
+      "value": 0.35
+    },
+    "motion.spring.check.damping": {
+      "type": "number",
+      "value": 0.7
+    },
+    "motion.duration.hover": {
+      "type": "duration",
+      "value": 120,
+      "description": "hover and press on controls, easeOut"
+    },
+    "motion.duration.fade": {
+      "type": "duration",
+      "value": 200,
+      "description": "the Reduce Motion fallback: an opacity crossfade"
+    },
+    "motion.duration.enable": {
+      "type": "duration",
+      "value": 280,
+      "description": "a control enabling or disabling, easeInOut"
+    },
+    "motion.duration.page": {
+      "type": "duration",
+      "value": 350,
+      "description": "an onboarding step change, easeInOut"
+    },
+    "motion.duration.reveal": {
+      "type": "duration",
+      "value": 400,
+      "description": "stagedReveal: one item arriving, easeOut"
+    },
+    "motion.duration.numbers": {
+      "type": "duration",
+      "value": 450,
+      "description": "numericRoll, easeInOut"
+    },
+    "motion.duration.stagger": {
+      "type": "duration",
+      "value": 450,
+      "description": "onboarding content arriving"
+    },
+    "motion.duration.staggerStep": {
+      "type": "duration",
+      "value": 80,
+      "description": "delay added per item"
+    },
+    "motion.duration.exit": {
+      "type": "duration",
+      "value": 450,
+      "description": "onboarding leaving"
+    },
+    "motion.duration.revealCadence": {
+      "type": "duration",
+      "value": 550,
+      "description": "stagedReveal: between items"
+    },
+    "motion.duration.minDwell": {
+      "type": "duration",
+      "value": 600,
+      "description": "progressHold: a finished state stays at least this long"
+    },
+    "motion.duration.typeahead": {
+      "type": "duration",
+      "value": 1000,
+      "description": "typed letters count as one search while they come this close together"
+    },
+    "motion.duration.afterDone": {
+      "type": "duration",
+      "value": 4000,
+      "description": "dismissible: a finished panel closes itself after this"
+    },
+    "motion.easing.easeOut": {
+      "type": "cubicBezier",
+      "value": [
+        0,
+        0,
+        0.58,
+        1
+      ]
+    },
+    "motion.easing.easeInOut": {
+      "type": "cubicBezier",
+      "value": [
+        0.42,
+        0,
+        0.58,
+        1
+      ]
+    },
+    "motion.distance.swapBlur": {
+      "type": "dimension",
+      "value": 6
+    },
+    "motion.distance.swapOffset": {
+      "type": "dimension",
+      "value": 5
+    },
+    "motion.distance.slideOffset": {
+      "type": "dimension",
+      "value": 8,
+      "description": "slideIn: outer padding and travel"
+    },
+    "motion.distance.revealOffset": {
+      "type": "dimension",
+      "value": 8
+    },
+    "motion.distance.revealBlur": {
+      "type": "dimension",
+      "value": 8
+    },
+    "motion.distance.pageBlur": {
+      "type": "dimension",
+      "value": 8
+    },
+    "motion.distance.staggerBlur": {
+      "type": "dimension",
+      "value": 10
+    },
+    "motion.distance.exitBlur": {
+      "type": "dimension",
+      "value": 12
+    },
+    "size.button.smallHeight": {
+      "type": "dimension",
+      "value": 28
+    },
+    "size.button.smallPaddingX": {
+      "type": "dimension",
+      "value": 14
+    },
+    "size.button.inListHeight": {
+      "type": "dimension",
+      "value": 24
+    },
+    "size.button.inListPaddingX": {
+      "type": "dimension",
+      "value": 10
+    },
+    "size.button.height": {
+      "type": "dimension",
+      "value": 30
+    },
+    "size.button.paddingX": {
+      "type": "dimension",
+      "value": 16
+    },
+    "size.button.heroHeight": {
+      "type": "dimension",
+      "value": 38
+    },
+    "size.button.heroWidth": {
+      "type": "dimension",
+      "value": 240
+    },
+    "size.switch.width": {
+      "type": "dimension",
+      "value": 34
+    },
+    "size.switch.height": {
+      "type": "dimension",
+      "value": 20
+    },
+    "size.switch.knob": {
+      "type": "dimension",
+      "value": 16
+    },
+    "size.switch.inset": {
+      "type": "dimension",
+      "value": 2
+    },
+    "size.select.height": {
+      "type": "dimension",
+      "value": 28
+    },
+    "size.select.minWidth": {
+      "type": "dimension",
+      "value": 144
+    },
+    "size.select.paddingLeading": {
+      "type": "dimension",
+      "value": 10
+    },
+    "size.select.icon": {
+      "type": "dimension",
+      "value": 16
+    },
+    "size.select.chevron": {
+      "type": "dimension",
+      "value": 9
+    },
+    "size.select.rowHeight": {
+      "type": "dimension",
+      "value": 32
+    },
+    "size.select.rowPaddingX": {
+      "type": "dimension",
+      "value": 10
+    },
+    "size.select.rowIconGap": {
+      "type": "dimension",
+      "value": 10
+    },
+    "size.select.check": {
+      "type": "dimension",
+      "value": 12
+    },
+    "size.select.checkSlot": {
+      "type": "dimension",
+      "value": 14
+    },
+    "size.field.height": {
+      "type": "dimension",
+      "value": 28
+    },
+    "size.field.paddingX": {
+      "type": "dimension",
+      "value": 11
+    },
+    "size.field.paddingY": {
+      "type": "dimension",
+      "value": 7
+    },
+    "size.field.searchHeight": {
+      "type": "dimension",
+      "value": 29
+    },
+    "size.icon.body": {
+      "type": "dimension",
+      "value": 13
+    },
+    "size.icon.row": {
+      "type": "dimension",
+      "value": 14
+    },
+    "size.icon.rowLarge": {
+      "type": "dimension",
+      "value": 16
+    },
+    "size.icon.sidebar": {
+      "type": "dimension",
+      "value": 16
+    },
+    "size.icon.info": {
+      "type": "dimension",
+      "value": 14
+    },
+    "size.icon.disclosure": {
+      "type": "dimension",
+      "value": 11
+    },
+    "size.icon.emptyStateMin": {
+      "type": "dimension",
+      "value": 32
+    },
+    "size.icon.emptyStateMax": {
+      "type": "dimension",
+      "value": 44
+    },
+    "size.progress.height": {
+      "type": "dimension",
+      "value": 6
+    },
+    "size.progress.radius": {
+      "type": "dimension",
+      "value": 3
+    },
+    "size.progress.width": {
+      "type": "dimension",
+      "value": 240
+    },
+    "size.notificationPanel.width": {
+      "type": "dimension",
+      "value": 400
+    },
+    "size.notificationPanel.inset": {
+      "type": "dimension",
+      "value": 18
+    },
+    "size.notificationPanel.header": {
+      "type": "dimension",
+      "value": 11
+    },
+    "size.notificationPanel.media": {
+      "type": "dimension",
+      "value": 60
+    },
+    "size.notificationPanel.mediaGap": {
+      "type": "dimension",
+      "value": 14
+    },
+    "size.notificationPanel.detailsPadY": {
+      "type": "dimension",
+      "value": 11
+    },
+    "size.notificationPanel.detailsRowGap": {
+      "type": "dimension",
+      "value": 7
+    },
+    "size.appWindow.width": {
+      "type": "dimension",
+      "value": 440
+    },
+    "size.appWindow.column": {
+      "type": "dimension",
+      "value": 376
+    },
+    "size.appWindow.media": {
+      "type": "dimension",
+      "value": 96
+    },
+    "size.appWindow.detailRowGap": {
+      "type": "dimension",
+      "value": 24
+    },
+    "size.mainWindow.width": {
+      "type": "dimension",
+      "value": 980
+    },
+    "size.mainWindow.height": {
+      "type": "dimension",
+      "value": 700
+    },
+    "size.mainWindow.sidebarWidth": {
+      "type": "dimension",
+      "value": 240
+    },
+    "size.mainWindow.sidebarRowWidth": {
+      "type": "dimension",
+      "value": 216
+    },
+    "size.mainWindow.sidebarRowHeight": {
+      "type": "dimension",
+      "value": 29
+    },
+    "size.mainWindow.statusCapsuleHeight": {
+      "type": "dimension",
+      "value": 40
+    },
+    "size.mainWindow.brandY": {
+      "type": "dimension",
+      "value": 42
+    },
+    "size.mainWindow.headerY": {
+      "type": "dimension",
+      "value": 20
+    },
+    "size.settingsWindow.width": {
+      "type": "dimension",
+      "value": 560
+    },
+    "size.settingsWindow.maxHeight": {
+      "type": "dimension",
+      "value": 720
+    },
+    "size.settingsWindow.titleTop": {
+      "type": "dimension",
+      "value": 40
+    },
+    "size.settingsRow.switchHeight": {
+      "type": "dimension",
+      "value": 48
+    },
+    "size.settingsRow.selectHeight": {
+      "type": "dimension",
+      "value": 52
+    },
+    "size.settingsRow.captionSwitchHeight": {
+      "type": "dimension",
+      "value": 58.5
+    },
+    "size.settingsRow.disclosureHeight": {
+      "type": "dimension",
+      "value": 41
+    },
+    "size.settingsRow.listItemHeight": {
+      "type": "dimension",
+      "value": 44
+    },
+    "size.sheet.width": {
+      "type": "dimension",
+      "value": 560
+    },
+    "size.sheet.height": {
+      "type": "dimension",
+      "value": 480
+    },
+    "size.sheet.confirmationWidth": {
+      "type": "dimension",
+      "value": 420
+    },
+    "size.menuBarPanel.width": {
+      "type": "dimension",
+      "value": 240
+    },
+    "size.menuBarPanel.rowMinHeight": {
+      "type": "dimension",
+      "value": 24
+    },
+    "size.onboarding.width": {
+      "type": "dimension",
+      "value": 600
+    },
+    "size.onboarding.height": {
+      "type": "dimension",
+      "value": 480
+    },
+    "size.onboarding.textWidth": {
+      "type": "dimension",
+      "value": 420
+    },
+    "size.onboarding.bottomInset": {
+      "type": "dimension",
+      "value": 40
+    },
+    "size.onboarding.artIcon": {
+      "type": "dimension",
+      "value": 120
+    },
+    "size.onboarding.artMaxHeight": {
+      "type": "dimension",
+      "value": 190
+    },
+    "size.onboarding.dot": {
+      "type": "dimension",
+      "value": 6
+    },
+    "size.onboarding.dotActive": {
+      "type": "dimension",
+      "value": 18
+    },
+    "size.infoCard.panelRadius": {
+      "type": "dimension",
+      "value": 10
+    },
+    "size.chip.textMin": {
+      "type": "dimension",
+      "value": 11
+    },
+    "size.chip.textMax": {
+      "type": "dimension",
+      "value": 12
+    },
+    "app.splito.color.primary": {
+      "type": "color",
+      "light": "#6559B3",
+      "dark": "#6559B3",
+      "lightContrast": "#6559B3",
+      "darkContrast": "#6559B3"
+    },
+    "app.splito.color.lilac": {
+      "type": "color",
+      "light": "#C9C3FF",
+      "dark": "#C9C3FF",
+      "lightContrast": "#C9C3FF",
+      "darkContrast": "#C9C3FF"
+    },
+    "app.splito.color.onPrimary": {
+      "type": "color",
+      "light": "#FFFFFF",
+      "dark": "#FFFFFF",
+      "lightContrast": "#FFFFFF",
+      "darkContrast": "#FFFFFF"
+    },
+    "app.splito.font.family": {
+      "type": "fontFamily",
+      "value": "Plus Jakarta Sans"
+    },
+    "app.pane.color.icon": {
+      "type": "color",
+      "light": "#3E3D45",
+      "dark": "#D6D5DD",
+      "lightContrast": "#17161C",
+      "darkContrast": "#F4F4F6",
+      "description": "Toolbar and title-row glyphs."
+    },
+    "app.pane.color.pill": {
+      "type": "color",
+      "light": "#FFFFFF",
+      "dark": "#2C2B33",
+      "lightContrast": "#FFFFFF",
+      "darkContrast": "#2C2B33",
+      "description": "The glass toolbar capsule and the mode pill."
+    },
+    "app.pane.color.shade": {
+      "type": "color",
+      "light": "#17161C",
+      "dark": "#F4F4F6",
+      "lightContrast": "#17161C",
+      "darkContrast": "#F4F4F6",
+      "description": "Hover and press shade on glass buttons, at opacity toolbarHover or toolbarPressed."
+    },
+    "app.pane.color.recording": {
+      "type": "color",
+      "light": "#D93A2B",
+      "dark": "#FF5A4B",
+      "lightContrast": "#B0281B",
+      "darkContrast": "#FF7A6E",
+      "description": "Record while recording."
+    },
+    "app.pane.color.glassLight": {
+      "type": "color",
+      "light": "rgba(244, 244, 246, 0.92)",
+      "dark": "rgba(244, 244, 246, 0.92)",
+      "lightContrast": "rgba(244, 244, 246, 0.92)",
+      "darkContrast": "rgba(244, 244, 246, 0.92)",
+      "description": "Pane's light window: paper glass. A recorded deviation from solid light surfaces."
+    },
+    "app.pane.color.frameBody": {
+      "type": "color",
+      "light": "#1F1E25",
+      "dark": "#0E0E12",
+      "lightContrast": "#1F1E25",
+      "darkContrast": "#0E0E12"
+    },
+    "app.pane.color.frameEdge": {
+      "type": "color",
+      "light": "rgba(23, 22, 28, 0.55)",
+      "dark": "rgba(244, 244, 246, 0.22)",
+      "lightContrast": "rgba(23, 22, 28, 0.55)",
+      "darkContrast": "rgba(244, 244, 246, 0.22)"
+    },
+    "app.pane.color.frameButton": {
+      "type": "color",
+      "light": "#2B2A32",
+      "dark": "#3A3943",
+      "lightContrast": "#2B2A32",
+      "darkContrast": "#3A3943"
+    },
+    "app.pane.color.frameButtonNear": {
+      "type": "color",
+      "light": "#3A3943",
+      "dark": "#4A4953",
+      "lightContrast": "#3A3943",
+      "darkContrast": "#4A4953"
+    },
+    "app.pane.color.frameButtonEdge": {
+      "type": "color",
+      "light": "rgba(255, 255, 255, 0.22)",
+      "dark": "rgba(255, 255, 255, 0.26)",
+      "lightContrast": "rgba(255, 255, 255, 0.5)",
+      "darkContrast": "rgba(255, 255, 255, 0.55)"
+    },
+    "app.pane.color.screenOff": {
+      "type": "color",
+      "light": "#111116",
+      "dark": "#111116",
+      "lightContrast": "#111116",
+      "darkContrast": "#111116",
+      "description": "The device screen with nothing on it. Dark in both modes: a phone that is off."
+    },
+    "app.pane.color.toolSelect": {
+      "type": "color",
+      "light": "#4F7A4A",
+      "dark": "#4F7A4A",
+      "lightContrast": "#4F7A4A",
+      "darkContrast": "#4F7A4A",
+      "description": "Tool outlines and lines. One fixed set: tools draw over the device screen."
+    },
+    "app.pane.color.toolFill": {
+      "type": "color",
+      "light": "rgba(79, 122, 74, 0.16)",
+      "dark": "rgba(79, 122, 74, 0.16)",
+      "lightContrast": "rgba(79, 122, 74, 0.16)",
+      "darkContrast": "rgba(79, 122, 74, 0.16)"
+    },
+    "app.pane.color.toolGuide": {
+      "type": "color",
+      "light": "#B25E00",
+      "dark": "#B25E00",
+      "lightContrast": "#B25E00",
+      "darkContrast": "#B25E00",
+      "description": "Distances and snap guides, always dashed."
+    },
+    "app.pane.color.toolHalo": {
+      "type": "color",
+      "light": "rgba(244, 244, 246, 0.9)",
+      "dark": "rgba(244, 244, 246, 0.9)",
+      "lightContrast": "rgba(244, 244, 246, 0.9)",
+      "darkContrast": "rgba(244, 244, 246, 0.9)"
+    },
+    "app.pane.color.toolChip": {
+      "type": "color",
+      "light": "rgba(23, 22, 28, 0.92)",
+      "dark": "rgba(23, 22, 28, 0.92)",
+      "lightContrast": "rgba(23, 22, 28, 0.92)",
+      "darkContrast": "rgba(23, 22, 28, 0.92)"
+    },
+    "app.pane.color.toolChipText": {
+      "type": "color",
+      "light": "#F4F4F6",
+      "dark": "#F4F4F6",
+      "lightContrast": "#F4F4F6",
+      "darkContrast": "#F4F4F6"
+    },
+    "app.pane.color.toolChipEdge": {
+      "type": "color",
+      "light": "rgba(244, 244, 246, 0.3)",
+      "dark": "rgba(244, 244, 246, 0.3)",
+      "lightContrast": "rgba(244, 244, 246, 0.3)",
+      "darkContrast": "rgba(244, 244, 246, 0.3)"
+    },
+    "app.pane.opacity.toolbarHover": {
+      "type": "number",
+      "value": 0.06
+    },
+    "app.pane.opacity.toolbarPressed": {
+      "type": "number",
+      "value": 0.12
+    },
+    "app.pane.motion.spring.frameButton.response": {
+      "type": "number",
+      "value": 0.25
+    },
+    "app.pane.motion.spring.frameButton.damping": {
+      "type": "number",
+      "value": 0.85
+    },
+    "app.pane.size.titleRow.height": {
+      "type": "dimension",
+      "value": 52
+    },
+    "app.pane.size.titleRow.titleLeading": {
+      "type": "dimension",
+      "value": 28,
+      "description": "past the traffic lights"
+    },
+    "app.pane.size.titleRow.more": {
+      "type": "dimension",
+      "value": 36
+    },
+    "app.pane.size.toolbar.band": {
+      "type": "dimension",
+      "value": 54
+    },
+    "app.pane.size.toolbar.capsule": {
+      "type": "dimension",
+      "value": 36
+    },
+    "app.pane.size.toolbar.buttonWidth": {
+      "type": "dimension",
+      "value": 32
+    },
+    "app.pane.size.toolbar.buttonHeight": {
+      "type": "dimension",
+      "value": 28
+    },
+    "app.pane.size.toolbar.circle": {
+      "type": "dimension",
+      "value": 36
+    },
+    "app.pane.size.toolbar.icon": {
+      "type": "dimension",
+      "value": 15
+    },
+    "app.pane.size.modePill.height": {
+      "type": "dimension",
+      "value": 36
+    },
+    "app.pane.size.modePill.minWidth": {
+      "type": "dimension",
+      "value": 216
+    },
+    "app.pane.size.modePill.icon": {
+      "type": "dimension",
+      "value": 13
+    },
+    "app.pane.size.frame.bezel": {
+      "type": "dimension",
+      "value": 10
+    },
+    "app.pane.size.frame.bodyRadius": {
+      "type": "dimension",
+      "value": 46
+    },
+    "app.pane.size.frame.screenRadius": {
+      "type": "dimension",
+      "value": 36
+    },
+    "app.pane.size.frame.punchHole": {
+      "type": "dimension",
+      "value": 11
+    },
+    "app.pane.size.frame.buttonDepth": {
+      "type": "dimension",
+      "value": 3
+    },
+    "app.pane.size.frame.buttonDepthNear": {
+      "type": "dimension",
+      "value": 7
+    },
+    "app.pane.size.frame.buttonDepthPressed": {
+      "type": "dimension",
+      "value": 1
+    },
+    "app.pane.size.frame.buttonProximity": {
+      "type": "dimension",
+      "value": 24
+    },
+    "app.pane.size.frame.buttonHitDepth": {
+      "type": "dimension",
+      "value": 14
+    },
+    "app.pane.size.menu.width": {
+      "type": "dimension",
+      "value": 232
+    },
+    "app.pane.size.menu.tallRowHeight": {
+      "type": "dimension",
+      "value": 44
+    },
+    "app.pane.size.menu.headerHeight": {
+      "type": "dimension",
+      "value": 22
+    },
+    "app.pane.size.chip.height": {
+      "type": "dimension",
+      "value": 20
+    },
+    "app.pane.size.chip.paddingX": {
+      "type": "dimension",
+      "value": 7
+    },
+    "app.pane.size.chip.outline": {
+      "type": "dimension",
+      "value": 1.5
+    }
+  }
+}
