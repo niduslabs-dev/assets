@@ -3,6 +3,7 @@
  * SVGs carry outlined text (no font needed to view them) and every PNG comes
  * from the same source. Run `npm run build`; the output is committed.
  */
+import { execFileSync } from 'node:child_process';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { deflateSync } from 'node:zlib';
 import { dirname, join } from 'node:path';
@@ -10,6 +11,8 @@ import { fileURLToPath } from 'node:url';
 
 import { Resvg } from '@resvg/resvg-js';
 import opentype from 'opentype.js';
+
+import { paneIcon, paneSmallIcon } from './pane-icon.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const tokens = JSON.parse(readFileSync(join(root, 'tokens.json'), 'utf8'));
@@ -504,3 +507,35 @@ write('apps/shelf/apple-touch-icon.png', png(shelfIcon(180, { radius: 0 }), 180)
 write('apps/shelf/icon-192.png', png(shelfIcon(192), 192));
 write('apps/shelf/icon-512.png', png(shelfIcon(512), 512));
 write('apps/shelf/icon-maskable-512.png', png(shelfIcon(512, { radius: 0, scale: 0.8 }), 512));
+
+// Pane: the macOS app icon ("Phone behind glass"), drawn in scripts/pane-icon.mjs. The full
+// cut is used from 64 px up; 32 and 16 px have their own pixel-grid cuts.
+const paneAt = (side) => (side <= 16 ? paneSmallIcon(tokens.color, 16) : side <= 32 ? paneSmallIcon(tokens.color, 32) : paneIcon(tokens.color));
+write('apps/pane/icon.svg', paneIcon(tokens.color));
+write('apps/pane/icon-32.svg', paneSmallIcon(tokens.color, 32));
+write('apps/pane/icon-16.svg', paneSmallIcon(tokens.color, 16));
+for (const side of [1024, 512, 256, 128]) {
+  write(`apps/pane/png/icon-${side}.png`, png(paneAt(side), side));
+}
+for (const [name, side] of iconset) {
+  const data = png(paneAt(side), side);
+  write(`apps/pane/Pane.iconset/${name}`, data);
+  write(`apps/pane/AppIcon.appiconset/${name}`, data);
+}
+/** The asset catalog's index of the same ten files, for apps that compile a catalog with actool. */
+const appIconContents = {
+  images: iconset.map(([filename, side]) => {
+    const scale = filename.includes('@2x') ? 2 : 1;
+    return { filename, idiom: 'mac', scale: `${scale}x`, size: `${side / scale}x${side / scale}` };
+  }),
+  info: { author: 'xcode', version: 1 },
+};
+write('apps/pane/AppIcon.appiconset/Contents.json', JSON.stringify(appIconContents, null, 2) + '\n');
+// The website's favicon: the 32 px cut on a tile that fills the canvas.
+write('apps/pane/favicon.svg', paneSmallIcon(tokens.color, 'favicon'));
+write('apps/pane/favicon-32.png', png(paneSmallIcon(tokens.color, 'favicon'), 32));
+// iconutil ships with macOS; elsewhere the committed Pane.icns stays as it is.
+if (process.platform === 'darwin') {
+  execFileSync('iconutil', ['-c', 'icns', join(root, 'apps/pane/Pane.iconset'), '-o', join(root, 'apps/pane/Pane.icns')]);
+  console.log('apps/pane/Pane.icns');
+}

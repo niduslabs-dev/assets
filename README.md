@@ -19,6 +19,7 @@ The studio's logo, icons and social images. *Nidus* is Latin for "nest": the mar
 | `stores/` | `google-play-header.png` (4096×2304), `google-play-icon-512.png` | The Google Play developer page. 24-bit PNGs, since Play refuses transparency. |
 | `apps/splito/` | `google-play-icon-512.png`, `google-play-feature-graphic.png` (1024×500) | Splito's store listing: its icon redrawn from the app's shapes, and its name in Plus Jakarta Sans, the app's typeface. |
 | `apps/drop/` | `icon.svg`, `icon-small.svg`, `Drop.iconset/` (every macOS size), `Drop.icns` | Drop's app icon, "The Slot": an app tile carrying the Nidus mark drops into a glowing moss slot, on Apple's 1024 grid. The small cut is used at 32 px and below. `Drop.icns` is packed from the iconset with `iconutil -c icns apps/drop/Drop.iconset -o apps/drop/Drop.icns` after `npm run build`. |
+| `apps/pane/` | `icon.svg`, `icon-32.svg`, `icon-16.svg`, `png/` (1024, 512, 256, 128), `Pane.iconset/`, `Pane.icns`, `AppIcon.appiconset/`, `favicon.svg`, `favicon-32.png` | Pane's app icon, "Phone behind glass": a phone with a moss screen behind a clear tilted pane of glass, the Nidus seed on the glass, on a paper tile on Apple's 1024 grid. Drawn in `scripts/pane-icon.mjs`. 32 px and 16 px have their own pixel-grid cuts (16 drops the seed). `npm run build` also packs `Pane.icns` (on a Mac). The favicon is the 32 px cut on a tile that fills the canvas. |
 | `tokens.json` | Colours, byline, wordmark type | The single source for the values below. |
 
 ## Colours
