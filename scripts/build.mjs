@@ -472,3 +472,35 @@ const iconset = [
 for (const [name, side] of iconset) {
   write(`apps/drop/Drop.iconset/${name}`, png(dropIcon(side <= 32), side));
 }
+
+// Shelf (shelf.niduslabs.dev): an ink tile holding three books on a shelf, the third (moss)
+// standing on the same line and leaning against the second.
+/** Shelf's books and shelf, drawn in a 28-unit box (the same art as the site's header logo). */
+const shelfArt =
+  `<rect x="7" y="8" width="3.5" height="10" rx="1" fill="${paper}"/>` +
+  `<rect x="12.25" y="6" width="3.5" height="12" rx="1" fill="${paper}"/>` +
+  `<rect x="18" y="9.5" width="3.5" height="8.5" rx="1" fill="${mossOnDark}" transform="rotate(-14 18 18)"/>` +
+  `<rect x="6" y="19.5" width="16" height="2" rx="1" fill="${paper}"/>`;
+
+/**
+ * Shelf's icon at `side` px. `radius` rounds the tile (0 where the platform masks it);
+ * `scale` shrinks the art toward the centre to keep it inside a maskable icon's safe zone.
+ */
+function shelfIcon(side, { radius = 8, scale = 1 } = {}) {
+  const inset = (28 * (1 - scale)) / 2;
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${side}" height="${side}" viewBox="0 0 28 28">` +
+    `<rect width="28" height="28" rx="${radius}" fill="${ink}"/>` +
+    `<g transform="translate(${inset} ${inset}) scale(${scale})">${shelfArt}</g></svg>`
+  );
+}
+
+write('apps/shelf/favicon.svg', shelfIcon(32));
+write(
+  'apps/shelf/favicon.ico',
+  ico([16, 32, 48].map((size) => ({ size, data: png(shelfIcon(size), size) }))),
+);
+write('apps/shelf/apple-touch-icon.png', png(shelfIcon(180, { radius: 0 }), 180));
+write('apps/shelf/icon-192.png', png(shelfIcon(192), 192));
+write('apps/shelf/icon-512.png', png(shelfIcon(512), 512));
+write('apps/shelf/icon-maskable-512.png', png(shelfIcon(512, { radius: 0, scale: 0.8 }), 512));
