@@ -294,6 +294,8 @@ enum ThemeTokens {
             static let disclosure: CGFloat = 11
             static let emptyStateMin: CGFloat = 32
             static let emptyStateMax: CGFloat = 44
+            /// An app or file icon on a list row (Pane's drop card); the notification panel's media is 60
+            static let list: CGFloat = 32
         }
         enum Progress {
             static let height: CGFloat = 6

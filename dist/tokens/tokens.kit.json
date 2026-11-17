@@ -1134,6 +1134,11 @@
       "type": "dimension",
       "value": 44
     },
+    "size.icon.list": {
+      "type": "dimension",
+      "value": 32,
+      "description": "An app or file icon on a list row (Pane's drop card); the notification panel's media is 60"
+    },
     "size.progress.height": {
       "type": "dimension",
       "value": 6

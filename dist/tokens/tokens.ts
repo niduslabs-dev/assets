@@ -619,7 +619,8 @@ export const tokens = {
       "info": 14,
       "disclosure": 11,
       "emptyStateMin": 32,
-      "emptyStateMax": 44
+      "emptyStateMax": 44,
+      "list": 32
     },
     "progress": {
       "height": 6,
