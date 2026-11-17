@@ -712,10 +712,10 @@ export const tokens = {
     "pane": {
       "color": {
         "glassLight": {
-          "light": "rgba(244, 244, 246, 0.92)",
-          "dark": "rgba(244, 244, 246, 0.92)",
-          "lightContrast": "rgba(244, 244, 246, 0.92)",
-          "darkContrast": "rgba(244, 244, 246, 0.92)"
+          "light": "rgba(244, 244, 246, 0.93)",
+          "dark": "rgba(244, 244, 246, 0.93)",
+          "lightContrast": "rgba(244, 244, 246, 0.93)",
+          "darkContrast": "rgba(244, 244, 246, 0.93)"
         },
         "frameBody": {
           "light": "#1F1E25",
@@ -747,11 +747,17 @@ export const tokens = {
           "lightContrast": "rgba(255, 255, 255, 0.5)",
           "darkContrast": "rgba(255, 255, 255, 0.55)"
         },
-        "screenOff": {
+        "screenEmpty": {
           "light": "#111116",
           "dark": "#111116",
           "lightContrast": "#111116",
           "darkContrast": "#111116"
+        },
+        "screenOff": {
+          "light": "#000000",
+          "dark": "#000000",
+          "lightContrast": "#000000",
+          "darkContrast": "#000000"
         },
         "toolSelect": {
           "light": "#4F7A4A",

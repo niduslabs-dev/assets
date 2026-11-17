@@ -98,6 +98,12 @@ struct ThemeColour: Sendable {
         self.init(light: fixed, dark: fixed, lightContrast: fixed, darkContrast: fixed)
     }
 
+    /// The dark values in every mode, Increase Contrast kept: for text and controls drawn over
+    /// something that is dark whatever the app's mode (a device screen, a photo, a video).
+    var alwaysDark: ThemeColour {
+        ThemeColour(light: dark, dark: dark, lightContrast: darkContrast, darkContrast: darkContrast)
+    }
+
     var color: Color { Color(platformColor) }
 }
 

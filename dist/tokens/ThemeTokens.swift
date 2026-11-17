@@ -387,15 +387,17 @@ enum ThemeTokens {
     enum App {
         enum Pane {
             enum Colour {
-                /// Pane's light window: paper glass. A recorded deviation from solid light surfaces.
-                static let glassLight = ThemeColour(fixed: .init(0xF4F4F6, alpha: 0.92))
+                /// Pane's light window: paper glass. A recorded deviation from solid light surfaces. 93% keeps textSecondary at 4.5:1 with pure black behind the glass (92% measured 4.496:1).
+                static let glassLight = ThemeColour(fixed: .init(0xF4F4F6, alpha: 0.93))
                 static let frameBody = ThemeColour(light: .init(0x1F1E25), dark: .init(0x0E0E12), lightContrast: .init(0x1F1E25), darkContrast: .init(0x0E0E12))
                 static let frameEdge = ThemeColour(light: .init(0x17161C, alpha: 0.55), dark: .init(0xF4F4F6, alpha: 0.22), lightContrast: .init(0x17161C, alpha: 0.55), darkContrast: .init(0xF4F4F6, alpha: 0.22))
                 static let frameButton = ThemeColour(light: .init(0x2B2A32), dark: .init(0x3A3943), lightContrast: .init(0x2B2A32), darkContrast: .init(0x3A3943))
                 static let frameButtonNear = ThemeColour(light: .init(0x3A3943), dark: .init(0x4A4953), lightContrast: .init(0x3A3943), darkContrast: .init(0x4A4953))
                 static let frameButtonEdge = ThemeColour(light: .init(0xFFFFFF, alpha: 0.22), dark: .init(0xFFFFFF, alpha: 0.26), lightContrast: .init(0xFFFFFF, alpha: 0.5), darkContrast: .init(0xFFFFFF, alpha: 0.55))
-                /// The device screen with nothing on it. Dark in both modes: a phone that is off.
-                static let screenOff = ThemeColour(fixed: .init(0x111116))
+                /// The device screen with nothing on it (no emulator, starting, booting). Dark in both modes: a phone that is off.
+                static let screenEmpty = ThemeColour(fixed: .init(0x111116))
+                /// Behind the live picture, before its first frame arrives.
+                static let screenOff = ThemeColour(fixed: .init(0x000000))
                 /// Tool outlines and lines. One fixed set: tools draw over the device screen.
                 static let toolSelect = ThemeColour(fixed: .init(0x4F7A4A))
                 static let toolFill = ThemeColour(fixed: .init(0x4F7A4A, alpha: 0.16))
@@ -464,6 +466,12 @@ struct ThemeColour: Sendable {
 
     init(fixed: RGBA) {
         self.init(light: fixed, dark: fixed, lightContrast: fixed, darkContrast: fixed)
+    }
+
+    /// The dark values in every mode, Increase Contrast kept: for text and controls drawn over
+    /// something that is dark whatever the app's mode (a device screen, a photo, a video).
+    var alwaysDark: ThemeColour {
+        ThemeColour(light: dark, dark: dark, lightContrast: darkContrast, darkContrast: darkContrast)
     }
 
     var color: Color { Color(platformColor) }

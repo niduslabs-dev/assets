@@ -1370,11 +1370,11 @@
     },
     "app.pane.color.glassLight": {
       "type": "color",
-      "light": "rgba(244, 244, 246, 0.92)",
-      "dark": "rgba(244, 244, 246, 0.92)",
-      "lightContrast": "rgba(244, 244, 246, 0.92)",
-      "darkContrast": "rgba(244, 244, 246, 0.92)",
-      "description": "Pane's light window: paper glass. A recorded deviation from solid light surfaces."
+      "light": "rgba(244, 244, 246, 0.93)",
+      "dark": "rgba(244, 244, 246, 0.93)",
+      "lightContrast": "rgba(244, 244, 246, 0.93)",
+      "darkContrast": "rgba(244, 244, 246, 0.93)",
+      "description": "Pane's light window: paper glass. A recorded deviation from solid light surfaces. 93% keeps textSecondary at 4.5:1 with pure black behind the glass (92% measured 4.496:1)."
     },
     "app.pane.color.frameBody": {
       "type": "color",
@@ -1411,13 +1411,21 @@
       "lightContrast": "rgba(255, 255, 255, 0.5)",
       "darkContrast": "rgba(255, 255, 255, 0.55)"
     },
-    "app.pane.color.screenOff": {
+    "app.pane.color.screenEmpty": {
       "type": "color",
       "light": "#111116",
       "dark": "#111116",
       "lightContrast": "#111116",
       "darkContrast": "#111116",
-      "description": "The device screen with nothing on it. Dark in both modes: a phone that is off."
+      "description": "The device screen with nothing on it (no emulator, starting, booting). Dark in both modes: a phone that is off."
+    },
+    "app.pane.color.screenOff": {
+      "type": "color",
+      "light": "#000000",
+      "dark": "#000000",
+      "lightContrast": "#000000",
+      "darkContrast": "#000000",
+      "description": "Behind the live picture, before its first frame arrives."
     },
     "app.pane.color.toolSelect": {
       "type": "color",
