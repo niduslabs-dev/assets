@@ -49,7 +49,7 @@ Manrope: **Nidus** in ExtraBold (800), Labs in Medium (500), tracking −0.02em.
 
 ## Design tokens
 
-`tokens.json` is the one source of the studio's design values, in the [Design Tokens Format Module 2025.10](https://www.designtokens.org/tr/2025.10/format/). How apps use it: `../docs/design-language.md` and `../design/MIGRATION.md` in the workspace repo.
+`tokens.json` is the one source of the studio's design values, in the [Design Tokens Format Module 2025.10](https://www.designtokens.org/tr/2025.10/format/). How apps use it: `../studio/design/language.md` and `../tools/design/MIGRATION.md` in the workspace repo.
 
 - **Groups:** `color.brand`, `color.role` (named by job), `font`, `space`, `type`, `radius`, `border`, `opacity`, `shadow`, `motion`, `size` (component sizes off the spacing scale) and `app.<name>` (values one app owns).
 - **Modes:** a colour's `$value` is light. Dark and the two Increase Contrast values sit in `$extensions["dev.niduslabs.modes"]`. A mode left out falls back: `darkContrast` to `dark`, the others to light.
