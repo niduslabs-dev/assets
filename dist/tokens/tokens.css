@@ -221,6 +221,7 @@
   --size-menu-panel-tall-row-height: 44px;
   --size-menu-panel-header-height: 22px;
   --app-artifacts-size-palette-width: 660px;
+  --app-artifacts-size-phone-breakpoint: 720px;
   --app-pane-motion-spring-frame-button-response: 0.25;
   --app-pane-motion-spring-frame-button-damping: 0.85;
   --app-pane-size-confirmation-sheet-width: 355px;

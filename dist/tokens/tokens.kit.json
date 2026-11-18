@@ -1510,6 +1510,11 @@
       "value": 660,
       "description": "The width of the search palette (⌘K, /) on the desktop."
     },
+    "app.artifacts.size.phoneBreakpoint": {
+      "type": "dimension",
+      "value": 720,
+      "description": "The layout breakpoint: a window narrower than this gets the phone layout (tab bar, one view). CSS can't read a custom property in a media query, so the site's stylesheet writes the number in its @media rule and names this token beside it."
+    },
     "app.pane.color.glassLight": {
       "type": "color",
       "light": "rgba(244, 244, 246, 0.93)",
