@@ -696,6 +696,41 @@
       "type": "fontWeight",
       "value": 600
     },
+    "type.reading.family": {
+      "type": "fontFamily",
+      "value": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "description": "Everything else. SF Pro on Apple platforms."
+    },
+    "type.reading.size": {
+      "type": "dimension",
+      "value": 17,
+      "description": "long-form text read on a page (a plan, a doc), on the web and the phone; the apps' chrome stays on body"
+    },
+    "type.reading.weight": {
+      "type": "fontWeight",
+      "value": 400
+    },
+    "lineHeight.reading": {
+      "type": "number",
+      "value": 1.5,
+      "description": "type.reading paragraphs, lists and tables"
+    },
+    "lineHeight.heading": {
+      "type": "number",
+      "value": 1.25,
+      "description": "headings and page titles in reading text"
+    },
+    "lineHeight.interface": {
+      "type": "number",
+      "value": 1.4,
+      "description": "chrome: bars, lists, menus, buttons and labels"
+    },
     "radius.xs": {
       "type": "dimension",
       "value": 4
@@ -1139,6 +1174,21 @@
       "value": 32,
       "description": "An app or file icon on a list row (Pane's drop card); the notification panel's media is 60"
     },
+    "size.icon.stroke": {
+      "type": "dimension",
+      "value": 1.5,
+      "description": "The stroke of a drawn line icon (SVG, at any icon size). SF Symbols bring their own weight."
+    },
+    "size.touchTarget": {
+      "type": "dimension",
+      "value": 44,
+      "description": "The least height (and width) of anything tapped on a phone: rows, buttons, chips, fields, tabs, sheet rows"
+    },
+    "size.readingMeasure": {
+      "type": "number",
+      "value": 68,
+      "description": "The longest line of type.reading text, in characters: CSS takes calc(var(--size-reading-measure) * 1ch); a count, so it has no unit"
+    },
     "size.progress.height": {
       "type": "dimension",
       "value": 6
@@ -1439,6 +1489,11 @@
       "value": 11.5,
       "description": "The caption under a settings row in drawings."
     },
+    "app.boards.size.phoneSafeAreaBottom": {
+      "type": "dimension",
+      "value": 34,
+      "description": "The iPhone's bottom safe area (home indicator, portrait), for drawing phone screens. Code never uses a number: the web reads env(safe-area-inset-bottom), native apps their safe-area insets."
+    },
     "app.boards.shadow.sheet": {
       "type": "shadow",
       "value": {
@@ -1449,6 +1504,11 @@
         "spread": 0
       },
       "description": "A drawn sheet over its window."
+    },
+    "app.artifacts.size.paletteWidth": {
+      "type": "dimension",
+      "value": 660,
+      "description": "The width of the search palette (⌘K, /) on the desktop."
     },
     "app.pane.color.glassLight": {
       "type": "color",

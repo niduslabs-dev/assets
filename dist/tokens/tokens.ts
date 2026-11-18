@@ -443,7 +443,23 @@ export const tokens = {
       ],
       "size": 10,
       "weight": 600
+    },
+    "reading": {
+      "family": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Text",
+        "system-ui",
+        "sans-serif"
+      ],
+      "size": 17,
+      "weight": 400
     }
+  },
+  "lineHeight": {
+    "reading": 1.5,
+    "heading": 1.25,
+    "interface": 1.4
   },
   "radius": {
     "xs": 4,
@@ -620,8 +636,11 @@ export const tokens = {
       "disclosure": 11,
       "emptyStateMin": 32,
       "emptyStateMax": 44,
-      "list": 32
+      "list": 32,
+      "stroke": 1.5
     },
+    "touchTarget": 44,
+    "readingMeasure": 68,
     "progress": {
       "height": 6,
       "radius": 3,

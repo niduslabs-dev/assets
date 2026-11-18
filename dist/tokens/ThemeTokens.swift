@@ -142,6 +142,15 @@ enum ThemeTokens {
         static let caption = ThemeType(size: 11, weight: .regular, family: .system)
         static let groupLabel = ThemeType(size: 11, weight: .medium, family: .system)
         static let micro = ThemeType(size: 10, weight: .semibold, family: .system)
+        static let reading = ThemeType(size: 17, weight: .regular, family: .system)
+    }
+    enum LineHeight {
+        /// type.reading paragraphs, lists and tables
+        static let reading: Double = 1.5
+        /// headings and page titles in reading text
+        static let heading: Double = 1.25
+        /// chrome: bars, lists, menus, buttons and labels
+        static let interface: Double = 1.4
     }
     enum Radius {
         static let xs: CGFloat = 4
@@ -296,7 +305,13 @@ enum ThemeTokens {
             static let emptyStateMax: CGFloat = 44
             /// An app or file icon on a list row (Pane's drop card); the notification panel's media is 60
             static let list: CGFloat = 32
+            /// The stroke of a drawn line icon (SVG, at any icon size). SF Symbols bring their own weight.
+            static let stroke: CGFloat = 1.5
         }
+        /// The least height (and width) of anything tapped on a phone: rows, buttons, chips, fields, tabs, sheet rows
+        static let touchTarget: CGFloat = 44
+        /// The longest line of type.reading text, in characters: CSS takes calc(var(--size-reading-measure) * 1ch); a count, so it has no unit
+        static let readingMeasure: Double = 68
         enum Progress {
             static let height: CGFloat = 6
             static let radius: CGFloat = 3

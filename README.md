@@ -51,10 +51,12 @@ Manrope: **Nidus** in ExtraBold (800), Labs in Medium (500), tracking −0.02em.
 
 `tokens.json` is the one source of the studio's design values, in the [Design Tokens Format Module 2025.10](https://www.designtokens.org/tr/2025.10/format/). How apps use it: `../studio/design/language.md` and `../tools/design/MIGRATION.md` in the workspace repo.
 
-- **Groups:** `color.brand`, `color.role` (named by job), `font`, `space`, `type`, `radius`, `border`, `opacity`, `shadow`, `motion`, `size` (component sizes off the spacing scale) and `app.<name>` (values one app owns).
+- **Groups:** `color.brand`, `color.role` (named by job), `font`, `space`, `type`, `lineHeight` (multiples of the font size, for web text), `radius`, `border`, `opacity`, `shadow`, `motion`, `size` (component sizes off the spacing scale) and `app.<name>` (values one app owns).
 - **Modes:** a colour's `$value` is light. Dark and the two Increase Contrast values sit in `$extensions["dev.niduslabs.modes"]`. A mode left out falls back: `darkContrast` to `dark`, the others to light.
 - **Springs** are two numbers, `response` and `damping` (SwiftUI's damping fraction). The TypeScript output adds stiffness, damping and mass.
 - **An app with its own language** (Splito) marks its group with `$extensions["dev.niduslabs.outputs"]`. The shared outputs leave it out; its own emitter (`scripts/tokens/emit-splito.mjs`) writes `dist/tokens/splito.ts`. Shadows there may carry a dark mode too.
+- **Values only some outputs need** go the same way: `app.boards` (`["kit"]`, drawing values) is only in `tokens.kit.json`, and `app.artifacts` (`["css", "kit"]`, the artifacts viewer's own sizes) only in `tokens.css` and `tokens.kit.json`.
+- **Units:** dimensions are px (points on Apple platforms). A count with no unit is a `number`: `size.readingMeasure` is 68 characters, which CSS turns into a width with `calc(var(--size-reading-measure) * 1ch)`.
 - **Brand text** (name, byline, app names) is in the root `$extensions["dev.niduslabs.brand"]`; `scripts/tokens/brand.mjs` hands the artwork build the plain shape it reads.
 - **Outputs:** `npm run build:tokens` writes `dist/tokens/`. `npm run check:tokens` fails when a committed output is stale. The generator (`scripts/tokens/`) has no dependencies.
 

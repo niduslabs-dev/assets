@@ -8,7 +8,8 @@ export const MODES_EXTENSION = 'dev.niduslabs.modes';
 /**
  * On an `app.<name>` group: the only outputs that carry it (for example
  * `["splito"]`). An app with its own language keeps it out of the shared
- * Swift, CSS, TypeScript and kit outputs.
+ * Swift, CSS, TypeScript and kit outputs; `"css"` and `"kit"` put a group
+ * into tokens.css and tokens.kit.json only.
  */
 export const OUTPUTS_EXTENSION = 'dev.niduslabs.outputs';
 /** The modes a colour can carry besides its `$value`, which is light. */

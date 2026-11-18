@@ -23,16 +23,18 @@ const scopedOutputs = scopedGroups(source);
 const scoped = Object.keys(scopedOutputs);
 /** The studio's shared tokens: everything but the app groups that keep their own outputs. */
 const tokens = all.filter((token) => !scoped.some((prefix) => token.path.startsWith(`${prefix}.`)));
-/** The shared tokens plus the app groups that name the kit as an output (`app.boards`: board-only values). */
-const kitTokens = all.filter(
-  (token) =>
-    !scoped.some((prefix) => token.path.startsWith(`${prefix}.`)) ||
-    scoped.some((prefix) => scopedOutputs[prefix].includes('kit') && token.path.startsWith(`${prefix}.`)),
-);
+/** The shared tokens plus the app groups that name `output` (`kit`: `app.boards`, board-only values; `css`: `app.artifacts`, the site's own). */
+const tokensWith = (output) =>
+  all.filter(
+    (token) =>
+      !scoped.some((prefix) => token.path.startsWith(`${prefix}.`)) ||
+      scoped.some((prefix) => scopedOutputs[prefix].includes(output) && token.path.startsWith(`${prefix}.`)),
+  );
+const kitTokens = tokensWith('kit');
 
 const outputs = {
   'ThemeTokens.swift': swiftFile(tokens),
-  'tokens.css': cssFile(tokens),
+  'tokens.css': cssFile(tokensWith('css')),
   'tokens.ts': typescriptFile(tokens),
   'tokens.kit.json': kitJson(kitTokens),
   'splito.ts': splitoFile(all),

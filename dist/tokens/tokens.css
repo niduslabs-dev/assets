@@ -58,6 +58,12 @@
   --type-micro-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
   --type-micro-size: 10px;
   --type-micro-weight: 600;
+  --type-reading-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --type-reading-size: 17px;
+  --type-reading-weight: 400;
+  --line-height-reading: 1.5;
+  --line-height-heading: 1.25;
+  --line-height-interface: 1.4;
   --radius-xs: 4px;
   --radius-sm: 6px;
   --radius-control: 8px;
@@ -153,6 +159,9 @@
   --size-icon-empty-state-min: 32px;
   --size-icon-empty-state-max: 44px;
   --size-icon-list: 32px;
+  --size-icon-stroke: 1.5px;
+  --size-touch-target: 44px;
+  --size-reading-measure: 68;
   --size-progress-height: 6px;
   --size-progress-radius: 3px;
   --size-progress-width: 240px;
@@ -211,6 +220,7 @@
   --size-menu-panel-width: 232px;
   --size-menu-panel-tall-row-height: 44px;
   --size-menu-panel-header-height: 22px;
+  --app-artifacts-size-palette-width: 660px;
   --app-pane-motion-spring-frame-button-response: 0.25;
   --app-pane-motion-spring-frame-button-damping: 0.85;
   --app-pane-size-confirmation-sheet-width: 355px;
