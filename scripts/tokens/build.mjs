@@ -19,15 +19,22 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const outDir = join(root, 'dist', 'tokens');
 const source = JSON.parse(readFileSync(join(root, 'tokens.json'), 'utf8'));
 const all = flatten(source);
-const scoped = Object.keys(scopedGroups(source));
+const scopedOutputs = scopedGroups(source);
+const scoped = Object.keys(scopedOutputs);
 /** The studio's shared tokens: everything but the app groups that keep their own outputs. */
 const tokens = all.filter((token) => !scoped.some((prefix) => token.path.startsWith(`${prefix}.`)));
+/** The shared tokens plus the app groups that name the kit as an output (`app.boards`: board-only values). */
+const kitTokens = all.filter(
+  (token) =>
+    !scoped.some((prefix) => token.path.startsWith(`${prefix}.`)) ||
+    scoped.some((prefix) => scopedOutputs[prefix].includes('kit') && token.path.startsWith(`${prefix}.`)),
+);
 
 const outputs = {
   'ThemeTokens.swift': swiftFile(tokens),
   'tokens.css': cssFile(tokens),
   'tokens.ts': typescriptFile(tokens),
-  'tokens.kit.json': kitJson(tokens),
+  'tokens.kit.json': kitJson(kitTokens),
   'splito.ts': splitoFile(all),
 };
 

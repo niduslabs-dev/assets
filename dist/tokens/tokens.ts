@@ -815,6 +815,7 @@ export const tokens = {
         }
       },
       "size": {
+        "confirmationSheetWidth": 355,
         "titleRow": {
           "height": 52,
           "titleLeading": 28,

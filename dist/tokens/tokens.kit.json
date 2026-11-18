@@ -1373,6 +1373,59 @@
       "type": "dimension",
       "value": 22
     },
+    "app.boards.color.background": {
+      "type": "color",
+      "light": "#E4E4E9",
+      "dark": "#E4E4E9",
+      "lightContrast": "#E4E4E9",
+      "darkContrast": "#E4E4E9",
+      "description": "The board behind every drawing, the same in light and dark so both modes sit side by side."
+    },
+    "app.boards.color.backdrop": {
+      "type": "color",
+      "light": "#DCDCE2",
+      "dark": "#121117",
+      "lightContrast": "#DCDCE2",
+      "darkContrast": "#121117",
+      "description": "Behind a figure: a light desktop, or the dark wallpaper's base colour."
+    },
+    "app.boards.color.caption": {
+      "type": "color",
+      "light": "#3A3A3C",
+      "dark": "#3A3A3C",
+      "lightContrast": "#3A3A3C",
+      "darkContrast": "#3A3A3C",
+      "description": "Captions and notes on the board, outside any drawing."
+    },
+    "app.boards.color.closeButton": {
+      "type": "color",
+      "light": "#FF5F57",
+      "dark": "#FF5F57",
+      "lightContrast": "#FF5F57",
+      "darkContrast": "#FF5F57",
+      "description": "The macOS window close button, as the system draws it."
+    },
+    "app.boards.size.windowRadius": {
+      "type": "dimension",
+      "value": 16,
+      "description": "Corner of a drawn macOS window, sheet or scrim."
+    },
+    "app.boards.size.rowCaption": {
+      "type": "dimension",
+      "value": 11.5,
+      "description": "The caption under a settings row in drawings."
+    },
+    "app.boards.shadow.sheet": {
+      "type": "shadow",
+      "value": {
+        "color": "rgba(0, 0, 0, 0.3)",
+        "offsetX": 0,
+        "offsetY": 18,
+        "blur": 44,
+        "spread": 0
+      },
+      "description": "A drawn sheet over its window."
+    },
     "app.pane.color.glassLight": {
       "type": "color",
       "light": "rgba(244, 244, 246, 0.93)",
@@ -1490,6 +1543,11 @@
     "app.pane.motion.spring.frameButton.damping": {
       "type": "number",
       "value": 0.85
+    },
+    "app.pane.size.confirmationSheetWidth": {
+      "type": "dimension",
+      "value": 355,
+      "description": "Pane's confirmation sheets, narrower than size.sheet.confirmationWidth (420) to fit its window. A recorded deviation (tools/design/MIGRATION.md row 13)."
     },
     "app.pane.size.titleRow.height": {
       "type": "dimension",

@@ -416,6 +416,8 @@ enum ThemeTokens {
                 }
             }
             enum Size {
+                /// Pane's confirmation sheets, narrower than size.sheet.confirmationWidth (420) to fit its window. A recorded deviation (tools/design/MIGRATION.md row 13).
+                static let confirmationSheetWidth: CGFloat = 355
                 enum TitleRow {
                     static let height: CGFloat = 52
                     /// past the traffic lights
