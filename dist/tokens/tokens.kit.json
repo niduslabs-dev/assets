@@ -1397,6 +1397,30 @@
       "darkContrast": "#3A3A3C",
       "description": "Captions and notes on the board, outside any drawing."
     },
+    "app.boards.color.text": {
+      "type": "color",
+      "light": "#17161C",
+      "dark": "#17161C",
+      "lightContrast": "#000000",
+      "darkContrast": "#000000",
+      "description": "Titles and headings on the board, which stays light in dark mode; textPrimary's light values."
+    },
+    "app.boards.color.link": {
+      "type": "color",
+      "light": "#466E41",
+      "dark": "#466E41",
+      "lightContrast": "#3B5D38",
+      "darkContrast": "#3B5D38",
+      "description": "Links on the board; link's light values, since the board stays light."
+    },
+    "app.boards.color.linkHover": {
+      "type": "color",
+      "light": "#3B5D38",
+      "dark": "#3B5D38",
+      "lightContrast": "#3B5D38",
+      "darkContrast": "#3B5D38",
+      "description": "A hovered link on the board."
+    },
     "app.boards.color.closeButton": {
       "type": "color",
       "light": "#FF5F57",
