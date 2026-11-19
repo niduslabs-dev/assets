@@ -258,6 +258,16 @@
   --app-artifacts-type-gallery-ui-family: Manrope;
   --app-artifacts-type-gallery-ui-size: 16px;
   --app-artifacts-type-gallery-ui-weight: 600;
+  --app-artifacts-type-prose-size: 18px;
+  --app-artifacts-type-prose-small-scale: 0.875;
+  --app-artifacts-line-height-prose-body: 1.75;
+  --app-artifacts-line-height-prose-title: 1.1;
+  --app-artifacts-prose-space-xs: 0.5;
+  --app-artifacts-prose-space-s: 0.75;
+  --app-artifacts-prose-space-m: 1.25;
+  --app-artifacts-prose-space-l: 1.75;
+  --app-artifacts-prose-space-xl: 2.25;
+  --app-artifacts-prose-space-xxl: 3;
   --app-pane-motion-spring-frame-button-response: 0.25;
   --app-pane-motion-spring-frame-button-damping: 0.85;
   --app-pane-size-confirmation-sheet-width: 355px;
@@ -321,6 +331,7 @@
   --app-artifacts-color-gallery-print: #FFFFFF;
   --app-artifacts-color-gallery-float: rgba(255, 255, 255, 0.88);
   --app-artifacts-color-gallery-float-edge: #6B6A72;
+  --app-artifacts-color-prose-body: #38373D;
   --app-drop-color-accent: #137B85;
   --app-shelf-color-accent: #8D6430;
   --app-arca-color-accent: #496F9F;
@@ -380,6 +391,7 @@
   --app-artifacts-color-gallery-print: #232229;
   --app-artifacts-color-gallery-float: rgba(38, 37, 43, 0.92);
   --app-artifacts-color-gallery-float-edge: #7A7983;
+  --app-artifacts-color-prose-body: #C3C3C6;
   --app-drop-color-accent: #5ABDC8;
   --app-shelf-color-accent: #D2A269;
   --app-arca-color-accent: #84AFE7;
@@ -413,6 +425,7 @@
   --color-role-status-warning-text: #4A2F00;
   --color-role-status-danger: #9E1D13;
   --app-artifacts-color-gallery-float-edge: #5E5D66;
+  --app-artifacts-color-prose-body: #000000;
   --app-pane-color-frame-button-edge: rgba(255, 255, 255, 0.5);
 }
 
@@ -462,6 +475,7 @@
   --app-artifacts-color-gallery-print: #232229;
   --app-artifacts-color-gallery-float: rgba(38, 37, 43, 0.92);
   --app-artifacts-color-gallery-float-edge: #A09FA8;
+  --app-artifacts-color-prose-body: #FFFFFF;
   --app-drop-color-accent: #5ABDC8;
   --app-shelf-color-accent: #D2A269;
   --app-arca-color-accent: #84AFE7;
@@ -522,6 +536,7 @@
     --app-artifacts-color-gallery-print: #232229;
     --app-artifacts-color-gallery-float: rgba(38, 37, 43, 0.92);
     --app-artifacts-color-gallery-float-edge: #7A7983;
+    --app-artifacts-color-prose-body: #C3C3C6;
     --app-drop-color-accent: #5ABDC8;
     --app-shelf-color-accent: #D2A269;
     --app-arca-color-accent: #84AFE7;
@@ -557,6 +572,7 @@
     --color-role-status-warning-text: #4A2F00;
     --color-role-status-danger: #9E1D13;
     --app-artifacts-color-gallery-float-edge: #5E5D66;
+    --app-artifacts-color-prose-body: #000000;
     --app-pane-color-frame-button-edge: rgba(255, 255, 255, 0.5);
   }
 }
@@ -608,6 +624,7 @@
     --app-artifacts-color-gallery-print: #232229;
     --app-artifacts-color-gallery-float: rgba(38, 37, 43, 0.92);
     --app-artifacts-color-gallery-float-edge: #A09FA8;
+    --app-artifacts-color-prose-body: #FFFFFF;
     --app-drop-color-accent: #5ABDC8;
     --app-shelf-color-accent: #D2A269;
     --app-arca-color-accent: #84AFE7;

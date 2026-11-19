@@ -1614,6 +1614,14 @@
       "darkContrast": "#A09FA8",
       "description": "Gallery: the 1 px edge of every floating control and the Search pill, at least 3:1 on paper and ink and over a print's shadow (control.boundary is 3.2:1 on paper and drops under a shadow)."
     },
+    "app.artifacts.color.proseBody": {
+      "type": "color",
+      "light": "#38373D",
+      "dark": "#C3C3C6",
+      "lightContrast": "#000000",
+      "darkContrast": "#FFFFFF",
+      "description": "The reader's body text, a step softer than text.primary, which stays for headings and bold (Tailwind Typography's body and headings pair). Paper 15% toward ink on light (10.7:1 on paper); ink 78% toward paper on dark (10.2:1 on ink)."
+    },
     "app.artifacts.shadow.print": {
       "type": "shadow",
       "value": [
@@ -1817,6 +1825,56 @@
     "app.artifacts.type.gallery.ui.weight": {
       "type": "fontWeight",
       "value": 600
+    },
+    "app.artifacts.type.prose.size": {
+      "type": "dimension",
+      "value": 18,
+      "description": "Reading text in the reader on the Mac (prose-lg's 18). The phone keeps type.reading (17)."
+    },
+    "app.artifacts.type.prose.smallScale": {
+      "type": "number",
+      "value": 0.875,
+      "description": "Inline code, code blocks and tables, as a fraction of the reading text (prose-lg: 16/18)."
+    },
+    "app.artifacts.lineHeight.proseBody": {
+      "type": "number",
+      "value": 1.75,
+      "description": "The reader's paragraphs and lists (prose-lg: 32/18)."
+    },
+    "app.artifacts.lineHeight.proseTitle": {
+      "type": "number",
+      "value": 1.1,
+      "description": "The reader's page title (H1), which may wrap at its size."
+    },
+    "app.artifacts.proseSpace.xs": {
+      "type": "number",
+      "value": 0.5,
+      "description": "between list items; under an H4"
+    },
+    "app.artifacts.proseSpace.s": {
+      "type": "number",
+      "value": 0.75,
+      "description": "around a nested list; under an H3"
+    },
+    "app.artifacts.proseSpace.m": {
+      "type": "number",
+      "value": 1.25,
+      "description": "between paragraphs, lists and blockquotes; under an H2"
+    },
+    "app.artifacts.proseSpace.l": {
+      "type": "number",
+      "value": 1.75,
+      "description": "around code blocks, tables and figures; above an H4"
+    },
+    "app.artifacts.proseSpace.xl": {
+      "type": "number",
+      "value": 2.25,
+      "description": "above an H3; under the page title"
+    },
+    "app.artifacts.proseSpace.xxl": {
+      "type": "number",
+      "value": 3,
+      "description": "above an H2; around a rule"
     },
     "app.drop.color.accent": {
       "type": "color",
