@@ -1515,6 +1515,272 @@
       "value": 720,
       "description": "The layout breakpoint: a window narrower than this gets the phone layout (tab bar, one view). CSS can't read a custom property in a media query, so the site's stylesheet writes the number in its @media rule and names this token beside it."
     },
+    "app.artifacts.size.gallery.gutter": {
+      "type": "dimension",
+      "value": 64,
+      "description": "Gallery: the page's side margins on the Mac."
+    },
+    "app.artifacts.size.gallery.gutterPhone": {
+      "type": "dimension",
+      "value": 16,
+      "description": "Gallery: the page's side margins on the phone."
+    },
+    "app.artifacts.size.gallery.topLine": {
+      "type": "dimension",
+      "value": 72,
+      "description": "Gallery: the quiet top line (wordmark, where you are, Search) on the Mac. No fill, no rule."
+    },
+    "app.artifacts.size.gallery.topLinePhone": {
+      "type": "dimension",
+      "value": 56,
+      "description": "Gallery: the top line on the phone."
+    },
+    "app.artifacts.size.gallery.lightboxInset": {
+      "type": "dimension",
+      "value": 96,
+      "description": "Gallery: the one-board view's side margin, room for Previous and Next at the window's edges."
+    },
+    "app.artifacts.size.canvas.liveOutline": {
+      "type": "dimension",
+      "value": 3,
+      "description": "The outline of a board that is live in place on the canvas (moss)."
+    },
+    "app.artifacts.color.galleryMat": {
+      "type": "color",
+      "light": "#E7E7EA",
+      "dark": "#29282E",
+      "lightContrast": "#E7E7EA",
+      "darkContrast": "#29282E",
+      "description": "Gallery: the mat behind a print's board (paper 5% toward ink; ink 10% toward paper)."
+    },
+    "app.artifacts.color.galleryPrint": {
+      "type": "color",
+      "light": "#FFFFFF",
+      "dark": "#232229",
+      "lightContrast": "#FFFFFF",
+      "darkContrast": "#232229",
+      "description": "Gallery: prints, fields and the search palette. Light is surface.baseSolid; dark is ink lifted 7% toward paper, so a print reads as an object without a border."
+    },
+    "app.artifacts.color.galleryFloat": {
+      "type": "color",
+      "light": "rgba(255, 255, 255, 0.88)",
+      "dark": "rgba(38, 37, 43, 0.92)",
+      "lightContrast": "rgba(255, 255, 255, 0.88)",
+      "darkContrast": "rgba(38, 37, 43, 0.92)",
+      "description": "Gallery: a floating control's fill (Contents, the canvas capsule, Previous and Next), over a blur."
+    },
+    "app.artifacts.color.galleryFloatEdge": {
+      "type": "color",
+      "light": "#6B6A72",
+      "dark": "#7A7983",
+      "lightContrast": "#5E5D66",
+      "darkContrast": "#A09FA8",
+      "description": "Gallery: the 1 px edge of every floating control and the Search pill, at least 3:1 on paper and ink and over a print's shadow (control.boundary is 3.2:1 on paper and drops under a shadow)."
+    },
+    "app.artifacts.shadow.print": {
+      "type": "shadow",
+      "value": [
+        {
+          "color": "rgba(23, 22, 28, 0.06)",
+          "offsetX": 0,
+          "offsetY": 2,
+          "blur": 6,
+          "spread": 0
+        },
+        {
+          "color": "rgba(23, 22, 28, 0.18)",
+          "offsetX": 0,
+          "offsetY": 16,
+          "blur": 48,
+          "spread": -8
+        }
+      ],
+      "light": [
+        {
+          "color": "rgba(23, 22, 28, 0.06)",
+          "offsetX": 0,
+          "offsetY": 2,
+          "blur": 6,
+          "spread": 0
+        },
+        {
+          "color": "rgba(23, 22, 28, 0.18)",
+          "offsetX": 0,
+          "offsetY": 16,
+          "blur": 48,
+          "spread": -8
+        }
+      ],
+      "dark": [
+        {
+          "color": "rgba(244, 244, 246, 0.08)",
+          "offsetX": 0,
+          "offsetY": 0,
+          "blur": 0,
+          "spread": 1
+        },
+        {
+          "color": "rgba(23, 22, 28, 0.9)",
+          "offsetX": 0,
+          "offsetY": 16,
+          "blur": 48,
+          "spread": -8
+        }
+      ],
+      "lightContrast": [
+        {
+          "color": "rgba(23, 22, 28, 0.06)",
+          "offsetX": 0,
+          "offsetY": 2,
+          "blur": 6,
+          "spread": 0
+        },
+        {
+          "color": "rgba(23, 22, 28, 0.18)",
+          "offsetX": 0,
+          "offsetY": 16,
+          "blur": 48,
+          "spread": -8
+        }
+      ],
+      "darkContrast": [
+        {
+          "color": "rgba(244, 244, 246, 0.08)",
+          "offsetX": 0,
+          "offsetY": 0,
+          "blur": 0,
+          "spread": 1
+        },
+        {
+          "color": "rgba(23, 22, 28, 0.9)",
+          "offsetX": 0,
+          "offsetY": 16,
+          "blur": 48,
+          "spread": -8
+        }
+      ],
+      "description": "Gallery: lifts a print off the paper. Dark: a 1 px paper edge, then a deep ink shadow."
+    },
+    "app.artifacts.type.gallery.display.family": {
+      "type": "fontFamily",
+      "value": "Manrope",
+      "description": "Wordmark, byline and onboarding headings only."
+    },
+    "app.artifacts.type.gallery.display.size": {
+      "type": "dimension",
+      "value": 72,
+      "description": "Gallery: a page title (Apps, an app). Set tight as it grows: -0.035em."
+    },
+    "app.artifacts.type.gallery.display.weight": {
+      "type": "fontWeight",
+      "value": 800
+    },
+    "app.artifacts.type.gallery.display.sizePhone": {
+      "type": "dimension",
+      "value": 48,
+      "description": "The same step on the phone."
+    },
+    "app.artifacts.type.gallery.display.tracking": {
+      "type": "dimension",
+      "value": -2.52
+    },
+    "app.artifacts.type.gallery.display.lineHeight": {
+      "type": "number",
+      "value": 1
+    },
+    "app.artifacts.type.gallery.title.family": {
+      "type": "fontFamily",
+      "value": "Manrope",
+      "description": "Wordmark, byline and onboarding headings only."
+    },
+    "app.artifacts.type.gallery.title.size": {
+      "type": "dimension",
+      "value": 40,
+      "description": "Gallery: a section title on a page (Groups, Plans and docs). -0.025em."
+    },
+    "app.artifacts.type.gallery.title.weight": {
+      "type": "fontWeight",
+      "value": 800
+    },
+    "app.artifacts.type.gallery.title.sizePhone": {
+      "type": "dimension",
+      "value": 28,
+      "description": "The same step on the phone."
+    },
+    "app.artifacts.type.gallery.title.tracking": {
+      "type": "dimension",
+      "value": -1
+    },
+    "app.artifacts.type.gallery.name.family": {
+      "type": "fontFamily",
+      "value": "Manrope",
+      "description": "Wordmark, byline and onboarding headings only."
+    },
+    "app.artifacts.type.gallery.name.size": {
+      "type": "dimension",
+      "value": 22,
+      "description": "Gallery: an app or print name under its cover. -0.01em."
+    },
+    "app.artifacts.type.gallery.name.weight": {
+      "type": "fontWeight",
+      "value": 700
+    },
+    "app.artifacts.type.gallery.name.sizePhone": {
+      "type": "dimension",
+      "value": 20,
+      "description": "The same step on the phone."
+    },
+    "app.artifacts.type.gallery.name.tracking": {
+      "type": "dimension",
+      "value": -0.22
+    },
+    "app.artifacts.type.gallery.lede.family": {
+      "type": "fontFamily",
+      "value": "Manrope",
+      "description": "Wordmark, byline and onboarding headings only."
+    },
+    "app.artifacts.type.gallery.lede.size": {
+      "type": "dimension",
+      "value": 20,
+      "description": "Gallery: the line under a page title; plans and docs links."
+    },
+    "app.artifacts.type.gallery.lede.weight": {
+      "type": "fontWeight",
+      "value": 500
+    },
+    "app.artifacts.type.gallery.entry.family": {
+      "type": "fontFamily",
+      "value": "Manrope",
+      "description": "Wordmark, byline and onboarding headings only."
+    },
+    "app.artifacts.type.gallery.entry.size": {
+      "type": "dimension",
+      "value": 18,
+      "description": "Gallery: a group in an app page index, with its count."
+    },
+    "app.artifacts.type.gallery.entry.weight": {
+      "type": "fontWeight",
+      "value": 600
+    },
+    "app.artifacts.type.gallery.entry.sizePhone": {
+      "type": "dimension",
+      "value": 15,
+      "description": "The same step on the phone."
+    },
+    "app.artifacts.type.gallery.ui.family": {
+      "type": "fontFamily",
+      "value": "Manrope",
+      "description": "Wordmark, byline and onboarding headings only."
+    },
+    "app.artifacts.type.gallery.ui.size": {
+      "type": "dimension",
+      "value": 16,
+      "description": "Gallery: buttons, the top line, floating controls, search results."
+    },
+    "app.artifacts.type.gallery.ui.weight": {
+      "type": "fontWeight",
+      "value": 600
+    },
     "app.pane.color.glassLight": {
       "type": "color",
       "light": "rgba(244, 244, 246, 0.93)",

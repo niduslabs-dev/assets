@@ -11,6 +11,9 @@ export function kitJson(tokens) {
     const entry = { type: token.type };
     if (token.type === 'color') {
       for (const mode of MODES) entry[mode] = cssColour(token.modes[mode]);
+    } else if (token.modes) {
+      entry.value = plainValue(token);
+      for (const mode of MODES) entry[mode] = plainValue({ ...token, value: token.modes[mode] });
     } else {
       entry.value = plainValue(token);
     }
@@ -27,14 +30,16 @@ export function plainValue(token) {
       return token.value.value;
     case 'duration':
       return milliseconds(token.value);
-    case 'shadow':
-      return {
-        color: cssColour(token.value.color),
-        offsetX: token.value.offsetX.value,
-        offsetY: token.value.offsetY.value,
-        blur: token.value.blur.value,
-        spread: token.value.spread.value,
-      };
+    case 'shadow': {
+      const layer = (value) => ({
+        color: cssColour(value.color),
+        offsetX: value.offsetX.value,
+        offsetY: value.offsetY.value,
+        blur: value.blur.value,
+        spread: value.spread.value,
+      });
+      return Array.isArray(token.value) ? token.value.map(layer) : layer(token.value);
+    }
     default:
       return token.value;
   }

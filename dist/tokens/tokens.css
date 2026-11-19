@@ -222,6 +222,38 @@
   --size-menu-panel-header-height: 22px;
   --app-artifacts-size-palette-width: 660px;
   --app-artifacts-size-phone-breakpoint: 720px;
+  --app-artifacts-size-gallery-gutter: 64px;
+  --app-artifacts-size-gallery-gutter-phone: 16px;
+  --app-artifacts-size-gallery-top-line: 72px;
+  --app-artifacts-size-gallery-top-line-phone: 56px;
+  --app-artifacts-size-gallery-lightbox-inset: 96px;
+  --app-artifacts-size-canvas-live-outline: 3px;
+  --app-artifacts-type-gallery-display-family: Manrope;
+  --app-artifacts-type-gallery-display-size: 72px;
+  --app-artifacts-type-gallery-display-weight: 800;
+  --app-artifacts-type-gallery-display-size-phone: 48px;
+  --app-artifacts-type-gallery-display-tracking: -2.52px;
+  --app-artifacts-type-gallery-display-line-height: 1;
+  --app-artifacts-type-gallery-title-family: Manrope;
+  --app-artifacts-type-gallery-title-size: 40px;
+  --app-artifacts-type-gallery-title-weight: 800;
+  --app-artifacts-type-gallery-title-size-phone: 28px;
+  --app-artifacts-type-gallery-title-tracking: -1px;
+  --app-artifacts-type-gallery-name-family: Manrope;
+  --app-artifacts-type-gallery-name-size: 22px;
+  --app-artifacts-type-gallery-name-weight: 700;
+  --app-artifacts-type-gallery-name-size-phone: 20px;
+  --app-artifacts-type-gallery-name-tracking: -0.22px;
+  --app-artifacts-type-gallery-lede-family: Manrope;
+  --app-artifacts-type-gallery-lede-size: 20px;
+  --app-artifacts-type-gallery-lede-weight: 500;
+  --app-artifacts-type-gallery-entry-family: Manrope;
+  --app-artifacts-type-gallery-entry-size: 18px;
+  --app-artifacts-type-gallery-entry-weight: 600;
+  --app-artifacts-type-gallery-entry-size-phone: 15px;
+  --app-artifacts-type-gallery-ui-family: Manrope;
+  --app-artifacts-type-gallery-ui-size: 16px;
+  --app-artifacts-type-gallery-ui-weight: 600;
   --app-pane-motion-spring-frame-button-response: 0.25;
   --app-pane-motion-spring-frame-button-damping: 0.85;
   --app-pane-size-confirmation-sheet-width: 355px;
@@ -280,6 +312,10 @@
   --color-role-status-warning-fill: #FFF4E0;
   --color-role-status-danger: #C4271B;
   --color-role-status-danger-fill: #FDECEA;
+  --app-artifacts-color-gallery-mat: #E7E7EA;
+  --app-artifacts-color-gallery-print: #FFFFFF;
+  --app-artifacts-color-gallery-float: rgba(255, 255, 255, 0.88);
+  --app-artifacts-color-gallery-float-edge: #6B6A72;
   --app-pane-color-glass-light: rgba(244, 244, 246, 0.93);
   --app-pane-color-frame-body: #1F1E25;
   --app-pane-color-frame-edge: rgba(23, 22, 28, 0.55);
@@ -295,6 +331,7 @@
   --app-pane-color-tool-chip: rgba(23, 22, 28, 0.92);
   --app-pane-color-tool-chip-text: #F4F4F6;
   --app-pane-color-tool-chip-edge: rgba(244, 244, 246, 0.3);
+  --app-artifacts-shadow-print: 0px 2px 6px 0px rgba(23, 22, 28, 0.06), 0px 16px 48px -8px rgba(23, 22, 28, 0.18);
 }
 
 [data-theme="dark"] {
@@ -328,11 +365,16 @@
   --color-role-status-warning-fill: rgba(255, 170, 60, 0.14);
   --color-role-status-danger: #FF9D94;
   --color-role-status-danger-fill: rgba(255, 90, 80, 0.14);
+  --app-artifacts-color-gallery-mat: #29282E;
+  --app-artifacts-color-gallery-print: #232229;
+  --app-artifacts-color-gallery-float: rgba(38, 37, 43, 0.92);
+  --app-artifacts-color-gallery-float-edge: #7A7983;
   --app-pane-color-frame-body: #0E0E12;
   --app-pane-color-frame-edge: rgba(244, 244, 246, 0.22);
   --app-pane-color-frame-button: #3A3943;
   --app-pane-color-frame-button-near: #4A4953;
   --app-pane-color-frame-button-edge: rgba(255, 255, 255, 0.26);
+  --app-artifacts-shadow-print: 0px 0px 0px 1px rgba(244, 244, 246, 0.08), 0px 16px 48px -8px rgba(23, 22, 28, 0.9);
 }
 
 [data-contrast="more"], [data-contrast="more"] [data-theme="light"] {
@@ -354,6 +396,7 @@
   --color-role-status-warning: #8A4800;
   --color-role-status-warning-text: #4A2F00;
   --color-role-status-danger: #9E1D13;
+  --app-artifacts-color-gallery-float-edge: #5E5D66;
   --app-pane-color-frame-button-edge: rgba(255, 255, 255, 0.5);
 }
 
@@ -398,6 +441,10 @@
   --color-role-status-warning-fill: rgba(255, 170, 60, 0.2);
   --color-role-status-danger: #FFB0A8;
   --color-role-status-danger-fill: rgba(255, 90, 80, 0.2);
+  --app-artifacts-color-gallery-mat: #29282E;
+  --app-artifacts-color-gallery-print: #232229;
+  --app-artifacts-color-gallery-float: rgba(38, 37, 43, 0.92);
+  --app-artifacts-color-gallery-float-edge: #A09FA8;
   --app-pane-color-glass-light: rgba(244, 244, 246, 0.93);
   --app-pane-color-frame-body: #0E0E12;
   --app-pane-color-frame-edge: rgba(244, 244, 246, 0.22);
@@ -413,6 +460,7 @@
   --app-pane-color-tool-chip: rgba(23, 22, 28, 0.92);
   --app-pane-color-tool-chip-text: #F4F4F6;
   --app-pane-color-tool-chip-edge: rgba(244, 244, 246, 0.3);
+  --app-artifacts-shadow-print: 0px 0px 0px 1px rgba(244, 244, 246, 0.08), 0px 16px 48px -8px rgba(23, 22, 28, 0.9);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -447,11 +495,16 @@
     --color-role-status-warning-fill: rgba(255, 170, 60, 0.14);
     --color-role-status-danger: #FF9D94;
     --color-role-status-danger-fill: rgba(255, 90, 80, 0.14);
+    --app-artifacts-color-gallery-mat: #29282E;
+    --app-artifacts-color-gallery-print: #232229;
+    --app-artifacts-color-gallery-float: rgba(38, 37, 43, 0.92);
+    --app-artifacts-color-gallery-float-edge: #7A7983;
     --app-pane-color-frame-body: #0E0E12;
     --app-pane-color-frame-edge: rgba(244, 244, 246, 0.22);
     --app-pane-color-frame-button: #3A3943;
     --app-pane-color-frame-button-near: #4A4953;
     --app-pane-color-frame-button-edge: rgba(255, 255, 255, 0.26);
+    --app-artifacts-shadow-print: 0px 0px 0px 1px rgba(244, 244, 246, 0.08), 0px 16px 48px -8px rgba(23, 22, 28, 0.9);
   }
 }
 
@@ -475,6 +528,7 @@
     --color-role-status-warning: #8A4800;
     --color-role-status-warning-text: #4A2F00;
     --color-role-status-danger: #9E1D13;
+    --app-artifacts-color-gallery-float-edge: #5E5D66;
     --app-pane-color-frame-button-edge: rgba(255, 255, 255, 0.5);
   }
 }
@@ -521,6 +575,10 @@
     --color-role-status-warning-fill: rgba(255, 170, 60, 0.2);
     --color-role-status-danger: #FFB0A8;
     --color-role-status-danger-fill: rgba(255, 90, 80, 0.2);
+    --app-artifacts-color-gallery-mat: #29282E;
+    --app-artifacts-color-gallery-print: #232229;
+    --app-artifacts-color-gallery-float: rgba(38, 37, 43, 0.92);
+    --app-artifacts-color-gallery-float-edge: #A09FA8;
     --app-pane-color-glass-light: rgba(244, 244, 246, 0.93);
     --app-pane-color-frame-body: #0E0E12;
     --app-pane-color-frame-edge: rgba(244, 244, 246, 0.22);
@@ -536,5 +594,6 @@
     --app-pane-color-tool-chip: rgba(23, 22, 28, 0.92);
     --app-pane-color-tool-chip-text: #F4F4F6;
     --app-pane-color-tool-chip-edge: rgba(244, 244, 246, 0.3);
+    --app-artifacts-shadow-print: 0px 0px 0px 1px rgba(244, 244, 246, 0.08), 0px 16px 48px -8px rgba(23, 22, 28, 0.9);
   }
 }

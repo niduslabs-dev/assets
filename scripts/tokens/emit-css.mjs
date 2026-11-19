@@ -4,8 +4,11 @@ import { plainValue } from './emit-json.mjs';
 const kebab = (path) =>
   `--${path.replaceAll('.', '-').replaceAll(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()}`;
 
-function cssValue(token) {
-  const value = plainValue(token);
+/** One shadow layer as CSS, from `plainValue`'s shape. */
+const cssShadow = (layer) => `${layer.offsetX}px ${layer.offsetY}px ${layer.blur}px ${layer.spread}px ${layer.color}`;
+
+function cssValue(token, mode = 'light') {
+  const value = plainValue(token.modes ? { ...token, value: token.modes[mode] } : token);
   switch (token.type) {
     case 'dimension':
       return `${value}px`;
@@ -16,7 +19,7 @@ function cssValue(token) {
     case 'cubicBezier':
       return `cubic-bezier(${value.join(', ')})`;
     case 'shadow':
-      return `${value.offsetX}px ${value.offsetY}px ${value.blur}px ${value.spread}px ${value.color}`;
+      return [value].flat().map(cssShadow).join(', ');
     default:
       return String(value);
   }
@@ -34,11 +37,16 @@ function block(selector, lines, indent = '') {
  */
 export function cssFile(tokens) {
   const colours = tokens.filter((token) => token.type === 'color');
-  const rest = tokens.filter((token) => token.type !== 'color');
-  const colourLines = (mode) =>
-    colours
+  const moded = tokens.filter((token) => token.type !== 'color' && token.modes);
+  const rest = tokens.filter((token) => token.type !== 'color' && !token.modes);
+  const colourLines = (mode) => [
+    ...colours
       .filter((token) => mode === 'light' || cssColour(token.modes[mode]) !== cssColour(token.modes.light) || mode === 'darkContrast')
-      .map((token) => `${kebab(token.path)}: ${cssColour(token.modes[mode])};`);
+      .map((token) => `${kebab(token.path)}: ${cssColour(token.modes[mode])};`),
+    ...moded
+      .filter((token) => mode === 'light' || cssValue(token, mode) !== cssValue(token, 'light') || mode === 'darkContrast')
+      .map((token) => `${kebab(token.path)}: ${cssValue(token, mode)};`),
+  ];
   const base = [...rest.map((token) => `${kebab(token.path)}: ${cssValue(token)};`), ...colourLines('light')];
 
   return [
