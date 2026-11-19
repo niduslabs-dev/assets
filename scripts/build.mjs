@@ -101,8 +101,9 @@ function mark(colors) {
 /**
  * A square icon: the mark centred on a ground. `share` is how much of the
  * side the mark takes; avatars and maskable icons keep it inside the circle.
+ * `shapes` draws the mark (the Nidus mark by default) in the 100-unit box.
  */
-function icon(side, { ground, colors, share, radius = 0, small = false }) {
+function icon(side, { ground, colors, share, radius = 0, small = false, shapes = markShapes }) {
   const markSide = side * share;
   const offset = (side - markSide) / 2;
   const scale = markSide / markBox.size;
@@ -110,7 +111,7 @@ function icon(side, { ground, colors, share, radius = 0, small = false }) {
   return svgDoc(
     side,
     side,
-    `${groundShape}<g transform="translate(${offset} ${offset}) scale(${scale}) translate(${-markBox.x} ${-markBox.x})">${markShapes({ ...colors, small })}</g>`,
+    `${groundShape}<g transform="translate(${offset} ${offset}) scale(${scale}) translate(${-markBox.x} ${-markBox.x})">${shapes({ ...colors, small })}</g>`,
   );
 }
 
@@ -301,10 +302,26 @@ write('logo/artifacts-mark-on-dark.svg', artifactsMark(dark));
 write('logo/png/artifacts-mark-512.png', png(artifactsMark(light), 512));
 write('logo/png/artifacts-mark-on-dark-512.png', png(artifactsMark(dark), 512));
 
+/**
+ * A favicon tile: the mark on a solid rounded ink square, so it reads on light
+ * and dark tab bars alike (a bare mark in one look fades into one of them).
+ */
+const faviconTile = { share: 0.72, cornerShare: 0.22 };
+const tile = (side, { small = false, shapes } = {}) =>
+  icon(side, {
+    ground: ink,
+    colors: dark,
+    share: faviconTile.share,
+    radius: side * faviconTile.cornerShare,
+    small,
+    shapes,
+  });
+
 // The Artifacts site (artifacts.niduslabs.dev): its favicon and project icon follow the
-// colour scheme; the PNG fallback is the light mark at 32 px.
+// colour scheme; the PNG fallback, for browsers without SVG favicons, can't, so it is the
+// mark on the favicon tile.
 write('apps/artifacts/icon.svg', artifactsMarkAdaptive());
-write('apps/artifacts/favicon-32.png', png(artifactsMark(light, 32), 32));
+write('apps/artifacts/favicon-32.png', png(tile(32, { shapes: artifactsShapes }), 32));
 
 // Avatars (GitHub, npm, social profiles): ink square, mark inside the circle crop.
 const avatar = (side) => icon(side, { ground: ink, colors: dark, share: 0.5 });
@@ -313,12 +330,10 @@ write('avatar/avatar-1024.png', png(avatar(1024), 1024));
 write('avatar/avatar-512.png', png(avatar(512), 512));
 
 // Web icons.
-const tile = (side, small) =>
-  icon(side, { ground: ink, colors: dark, share: 0.72, radius: side * 0.22, small });
-write('web/favicon.svg', tile(32, true));
+write('web/favicon.svg', tile(32, { small: true }));
 write(
   'web/favicon.ico',
-  ico([16, 32, 48].map((size) => ({ size, data: png(tile(size, true), size) }))),
+  ico([16, 32, 48].map((size) => ({ size, data: png(tile(size, { small: true }), size) }))),
 );
 write('web/apple-touch-icon.png', png(icon(180, { ground: ink, colors: dark, share: 0.56 }), 180));
 write('web/icon-192.png', png(icon(192, { ground: ink, colors: dark, share: 0.56 }), 192));
