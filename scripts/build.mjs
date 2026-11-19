@@ -258,6 +258,54 @@ for (const [name, colors] of [['lockup', light], ['lockup-on-dark', dark]]) {
   write(`logo/png/${name}-1200.png`, png(lockup(colors), 1200));
 }
 
+/**
+ * The Artifacts mark ("Grid", studio/artifacts/boards/logo-options.html, chosen
+ * 2026-11-19): the Nidus tile holding three cards, the seed in the fourth
+ * slot. Same 100-unit box and tight box as the Nidus mark. */
+function artifactsShapes({ tile, seed }) {
+  const cell = (x, y) => `<rect x="${x}" y="${y}" width="17" height="17" rx="4" fill="${tile}"/>`;
+  return (
+    `<rect x="16" y="16" width="68" height="68" rx="24" fill="none" stroke="${tile}" stroke-width="8"/>` +
+    cell(29, 29) +
+    cell(54, 29) +
+    cell(29, 54) +
+    `<circle cx="62.5" cy="62.5" r="8.5" fill="${seed}"/>`
+  );
+}
+
+/** The Artifacts mark alone in its tight box, in one look. */
+function artifactsMark(colors, size) {
+  const dimensions = size ? ` width="${size}" height="${size}"` : '';
+  return `<svg xmlns="http://www.w3.org/2000/svg"${dimensions} viewBox="${markBox.x} ${markBox.x} ${markBox.size} ${markBox.size}">${artifactsShapes(colors)}</svg>\n`;
+}
+
+/**
+ * The Artifacts mark that follows the viewer's colour scheme: light colours by
+ * default, the on-dark ones under `prefers-color-scheme: dark`. For favicons
+ * and anywhere one file has to serve both looks.
+ */
+function artifactsMarkAdaptive(size) {
+  const dimensions = size ? ` width="${size}" height="${size}"` : '';
+  const style =
+    `<style>.t{fill:${light.tile}}.o{stroke:${light.tile}}.s{fill:${light.seed}}` +
+    `@media (prefers-color-scheme:dark){.t{fill:${dark.tile}}.o{stroke:${dark.tile}}.s{fill:${dark.seed}}}</style>`;
+  const shapes = artifactsShapes({ tile: 'TILE', seed: 'SEED' })
+    .replace('fill="none" stroke="TILE"', 'fill="none" class="o"')
+    .replaceAll('fill="TILE"', 'class="t"')
+    .replace('fill="SEED"', 'class="s"');
+  return `<svg xmlns="http://www.w3.org/2000/svg"${dimensions} viewBox="${markBox.x} ${markBox.x} ${markBox.size} ${markBox.size}">${style}${shapes}</svg>\n`;
+}
+
+write('logo/artifacts-mark.svg', artifactsMark(light));
+write('logo/artifacts-mark-on-dark.svg', artifactsMark(dark));
+write('logo/png/artifacts-mark-512.png', png(artifactsMark(light), 512));
+write('logo/png/artifacts-mark-on-dark-512.png', png(artifactsMark(dark), 512));
+
+// The Artifacts site (artifacts.niduslabs.dev): its favicon and project icon follow the
+// colour scheme; the PNG fallback is the light mark at 32 px.
+write('apps/artifacts/icon.svg', artifactsMarkAdaptive());
+write('apps/artifacts/favicon-32.png', png(artifactsMark(light, 32), 32));
+
 // Avatars (GitHub, npm, social profiles): ink square, mark inside the circle crop.
 const avatar = (side) => icon(side, { ground: ink, colors: dark, share: 0.5 });
 write('avatar/avatar.svg', avatar(1024));

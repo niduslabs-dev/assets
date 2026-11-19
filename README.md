@@ -13,6 +13,7 @@ The studio's logo, icons and social images. *Nidus* is Latin for "nest": the mar
 | Folder | Files | Use |
 | --- | --- | --- |
 | `logo/` | `mark`, `lockup` (mark + wordmark), each `on-dark`, `mono-black`, `mono-white` (SVG); PNGs in `logo/png/` | Anywhere the logo appears. Prefer the SVG. |
+| `logo/artifacts-mark*` | `artifacts-mark.svg`, `artifacts-mark-on-dark.svg`; PNGs in `logo/png/` | The Artifacts site's mark ("Grid", chosen 2026-11-19): the Nidus tile holding three cards, the seed in the fourth slot. |
 | `avatar/` | `avatar.svg`, `avatar-1024.png`, `avatar-512.png` | GitHub, npm, and other profile pictures. Safe for a circle crop. |
 | `web/` | `favicon.svg`, `favicon.ico` (16, 32, 48), `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` | Websites and web app manifests. |
 | `social/` | `og-image.png` (1200×630), `github-social-preview.png` (1280×640) | Link previews and the GitHub social preview. |
@@ -20,6 +21,7 @@ The studio's logo, icons and social images. *Nidus* is Latin for "nest": the mar
 | `apps/splito/` | `google-play-icon-512.png`, `google-play-feature-graphic.png` (1024×500) | Splito's store listing: its icon redrawn from the app's shapes, and its name in Plus Jakarta Sans, the app's typeface. |
 | `apps/drop/` | `icon.svg`, `icon-small.svg`, `Drop.iconset/` (every macOS size), `Drop.icns` | Drop's app icon, "The Slot": an app tile carrying the Nidus mark drops into a glowing moss slot, on Apple's 1024 grid. The small cut is used at 32 px and below. `Drop.icns` is packed from the iconset with `iconutil -c icns apps/drop/Drop.iconset -o apps/drop/Drop.icns` after `npm run build`. |
 | `apps/pane/` | `icon.svg`, `icon-32.svg`, `icon-16.svg`, `png/` (1024, 512, 256, 128), `Pane.iconset/`, `Pane.icns`, `AppIcon.appiconset/`, `favicon.svg`, `favicon-32.png` | Pane's app icon, "Phone behind glass": a phone with a moss screen behind a clear tilted pane of glass, the Nidus seed on the glass, on a paper tile on Apple's 1024 grid. Drawn in `scripts/pane-icon.mjs`. 32 px and 16 px have their own pixel-grid cuts (16 drops the seed). `npm run build` also packs `Pane.icns` (on a Mac). The favicon is the 32 px cut on a tile that fills the canvas. |
+| `apps/artifacts/` | `icon.svg`, `favicon-32.png` | artifacts.niduslabs.dev's favicon and project icon: the Artifacts mark in one file that follows `prefers-color-scheme`, plus the light mark at 32 px as the PNG fallback. |
 | `tokens.json` | Brand colours, byline and wordmark type, plus the design language's shared tokens: spacing, type scale, radii, colour roles (light, dark, Increase Contrast), motion and component sizes | The single source, in the Design Tokens (DTCG 2025.10) format. See Design tokens below. |
 | `dist/tokens/` | `ThemeTokens.swift`, `tokens.css`, `tokens.ts`, `tokens.kit.json`, `splito.ts` | Generated from `tokens.json` for Swift, the web, React Native and the kit page, plus Splito's own palette. Never edit. |
 
