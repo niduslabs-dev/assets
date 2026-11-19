@@ -1518,6 +1518,11 @@
       "value": 660,
       "description": "The width of the search palette (⌘K, /) on the desktop."
     },
+    "app.artifacts.size.proseMeasure": {
+      "type": "number",
+      "value": 80,
+      "description": "The reader's longest line, in characters of its body text (app.artifacts.type.prose.size), a little wider than size.readingMeasure like Notion's column (708 px at 16 px). The reader only; other pages keep size.readingMeasure. A count, so it has no unit."
+    },
     "app.artifacts.size.phoneBreakpoint": {
       "type": "dimension",
       "value": 720,

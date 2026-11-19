@@ -221,6 +221,7 @@
   --size-menu-panel-tall-row-height: 44px;
   --size-menu-panel-header-height: 22px;
   --app-artifacts-size-palette-width: 660px;
+  --app-artifacts-size-prose-measure: 80;
   --app-artifacts-size-phone-breakpoint: 720px;
   --app-artifacts-size-gallery-gutter: 64px;
   --app-artifacts-size-gallery-gutter-phone: 16px;
