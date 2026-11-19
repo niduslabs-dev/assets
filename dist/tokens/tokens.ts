@@ -731,6 +731,12 @@ export const tokens = {
   "app": {
     "pane": {
       "color": {
+        "accent": {
+          "light": "#915879",
+          "dark": "#D794BA",
+          "lightContrast": "#915879",
+          "darkContrast": "#D794BA"
+        },
         "glassLight": {
           "light": "rgba(244, 244, 246, 0.93)",
           "dark": "rgba(244, 244, 246, 0.93)",

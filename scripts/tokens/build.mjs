@@ -20,16 +20,19 @@ const outDir = join(root, 'dist', 'tokens');
 const source = JSON.parse(readFileSync(join(root, 'tokens.json'), 'utf8'));
 const all = flatten(source);
 const scopedOutputs = scopedGroups(source);
-const scoped = Object.keys(scopedOutputs);
-/** The studio's shared tokens: everything but the app groups that keep their own outputs. */
-const tokens = all.filter((token) => !scoped.some((prefix) => token.path.startsWith(`${prefix}.`)));
-/** The shared tokens plus the app groups that name `output` (`kit`: `app.boards`, board-only values; `css`: `app.artifacts`, the site's own). */
+/** The outputs a token is limited to: its own list, else its app group's, else `null` (every output). */
+const outputsOf = (token) =>
+  token.outputs ??
+  Object.entries(scopedOutputs).find(([prefix]) => token.path.startsWith(`${prefix}.`))?.[1] ??
+  null;
+/** The studio's shared tokens: everything but the tokens limited to some outputs. */
+const tokens = all.filter((token) => outputsOf(token) === null);
+/** The shared tokens plus those limited to outputs that include `output` (`kit`: `app.boards`, board-only values; `css`: `app.artifacts`, the site's own). */
 const tokensWith = (output) =>
-  all.filter(
-    (token) =>
-      !scoped.some((prefix) => token.path.startsWith(`${prefix}.`)) ||
-      scoped.some((prefix) => scopedOutputs[prefix].includes(output) && token.path.startsWith(`${prefix}.`)),
-  );
+  all.filter((token) => {
+    const outputs = outputsOf(token);
+    return outputs === null || outputs.includes(output);
+  });
 const kitTokens = tokensWith('kit');
 
 const outputs = {

@@ -9,7 +9,9 @@ export const MODES_EXTENSION = 'dev.niduslabs.modes';
  * On an `app.<name>` group: the only outputs that carry it (for example
  * `["splito"]`). An app with its own language keeps it out of the shared
  * Swift, CSS, TypeScript and kit outputs; `"css"` and `"kit"` put a group
- * into tokens.css and tokens.kit.json only.
+ * into tokens.css and tokens.kit.json only. On one token inside such a group
+ * it replaces the group's list for that token (Splito's primary is also in
+ * `"css"` and `"kit"`, for the artifacts viewer's Apps home).
  */
 export const OUTPUTS_EXTENSION = 'dev.niduslabs.outputs';
 /** The modes a colour can carry besides its `$value`, which is light. */
@@ -43,6 +45,8 @@ export function flatten(source) {
     if (!token.type) throw new Error(`${path}: no $type on the token or any group above it`);
     const entry = { path, type: token.type, value: token.$value };
     if (token.$description) entry.description = token.$description;
+    const outputs = raw.get(path).$extensions?.[OUTPUTS_EXTENSION];
+    if (outputs) entry.outputs = outputs;
     if (token.type === 'color') {
       checkColour(path, token.$value);
       const given = { light: token.$value, ...token.$extensions?.[MODES_EXTENSION] };

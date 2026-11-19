@@ -1423,6 +1423,14 @@
       "type": "dimension",
       "value": 22
     },
+    "app.splito.color.primary": {
+      "type": "color",
+      "light": "#6559B3",
+      "dark": "#928AF5",
+      "lightContrast": "#6559B3",
+      "darkContrast": "#928AF5",
+      "description": "Splito's violet. Its own outputs list also puts it in tokens.css and tokens.kit.json: Splito's tile colour on the artifacts viewer's Apps home."
+    },
     "app.boards.color.background": {
       "type": "color",
       "light": "#E4E4E9",
@@ -1540,10 +1548,39 @@
       "value": 96,
       "description": "Gallery: the one-board view's side margin, room for Previous and Next at the window's edges."
     },
+    "app.artifacts.size.gallery.tileMark": {
+      "type": "dimension",
+      "value": 416,
+      "description": "Apps home: a tile's texture, the app's icon (its size) or initial (its font size), bleeding off the tile's bottom right; about the tile's width on the Mac."
+    },
+    "app.artifacts.size.gallery.tileMarkPhone": {
+      "type": "dimension",
+      "value": 280,
+      "description": "Apps home: a tile's texture on the phone."
+    },
+    "app.artifacts.size.gallery.pageMax": {
+      "type": "dimension",
+      "value": 1440,
+      "description": "The widest a page gets, gutters included. On wider windows the top line, Apps home, app pages and the reader stay this wide and centred, so the reader's column and its On this page rail stay one block."
+    },
     "app.artifacts.size.canvas.liveOutline": {
       "type": "dimension",
       "value": 3,
       "description": "The outline of a board that is live in place on the canvas (moss)."
+    },
+    "app.artifacts.opacity.tileTint": {
+      "type": "number",
+      "value": 0.12,
+      "description": "Apps home: how much of the app's accent is mixed into a tile's print colour."
+    },
+    "app.artifacts.opacity.tileMark": {
+      "type": "number",
+      "value": 0.16,
+      "light": 0.16,
+      "dark": 0.2,
+      "lightContrast": 0.16,
+      "darkContrast": 0.2,
+      "description": "Apps home: the strength of a tile's texture (the app's icon or initial, in its accent). Decorative."
     },
     "app.artifacts.color.galleryMat": {
       "type": "color",
@@ -1780,6 +1817,38 @@
     "app.artifacts.type.gallery.ui.weight": {
       "type": "fontWeight",
       "value": 600
+    },
+    "app.drop.color.accent": {
+      "type": "color",
+      "light": "#137B85",
+      "dark": "#5ABDC8",
+      "lightContrast": "#137B85",
+      "darkContrast": "#5ABDC8",
+      "description": "Drop's colour: teal, hue 205, water for an app named Drop. Moss turned round the colour wheel at moss's own OKLCH lightness and chroma (dark: moss-on-dark turned the same way), so the apps read as one family; 4.5:1 with white on it and on paper. Its tile on the artifacts viewer's Apps home (studio/artifacts/boards/tiles-home.html)."
+    },
+    "app.shelf.color.accent": {
+      "type": "color",
+      "light": "#8D6430",
+      "dark": "#D2A269",
+      "lightContrast": "#8D6430",
+      "darkContrast": "#D2A269",
+      "description": "Shelf's colour: ochre, hue 70, wood for a shelf. Moss turned round the colour wheel at moss's own OKLCH lightness and chroma (dark: moss-on-dark turned the same way), so the apps read as one family; 4.5:1 with white on it and on paper. Its tile on the artifacts viewer's Apps home (studio/artifacts/boards/tiles-home.html)."
+    },
+    "app.arca.color.accent": {
+      "type": "color",
+      "light": "#496F9F",
+      "dark": "#84AFE7",
+      "lightContrast": "#496F9F",
+      "darkContrast": "#84AFE7",
+      "description": "Arca's colour: steel blue, hue 255, a strongbox. Moss turned round the colour wheel at moss's own OKLCH lightness and chroma (dark: moss-on-dark turned the same way), so the apps read as one family; 4.5:1 with white on it and on paper. Its tile on the artifacts viewer's Apps home (studio/artifacts/boards/tiles-home.html)."
+    },
+    "app.pane.color.accent": {
+      "type": "color",
+      "light": "#915879",
+      "dark": "#D794BA",
+      "lightContrast": "#915879",
+      "darkContrast": "#D794BA",
+      "description": "Pane's colour: berry, hue 345, the far side of the wheel from moss, so Pane's green icon stands out on it. Like every app.pane token it reaches every output. Moss turned round the colour wheel at moss's own OKLCH lightness and chroma (dark: moss-on-dark turned the same way), so the apps read as one family; 4.5:1 with white on it and on paper. Its tile on the artifacts viewer's Apps home (studio/artifacts/boards/tiles-home.html)."
     },
     "app.pane.color.glassLight": {
       "type": "color",

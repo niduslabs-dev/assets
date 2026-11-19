@@ -404,6 +404,8 @@ enum ThemeTokens {
     enum App {
         enum Pane {
             enum Colour {
+                /// Pane's colour: berry, hue 345, the far side of the wheel from moss, so Pane's green icon stands out on it. Like every app.pane token it reaches every output. Moss turned round the colour wheel at moss's own OKLCH lightness and chroma (dark: moss-on-dark turned the same way), so the apps read as one family; 4.5:1 with white on it and on paper. Its tile on the artifacts viewer's Apps home (studio/artifacts/boards/tiles-home.html).
+                static let accent = ThemeColour(light: .init(0x915879), dark: .init(0xD794BA), lightContrast: .init(0x915879), darkContrast: .init(0xD794BA))
                 /// Pane's light window: paper glass. A recorded deviation from solid light surfaces. 93% keeps textSecondary at 4.5:1 with pure black behind the glass (92% measured 4.496:1).
                 static let glassLight = ThemeColour(fixed: .init(0xF4F4F6, alpha: 0.93))
                 static let frameBody = ThemeColour(light: .init(0x1F1E25), dark: .init(0x0E0E12), lightContrast: .init(0x1F1E25), darkContrast: .init(0x0E0E12))
