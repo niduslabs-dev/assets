@@ -114,6 +114,7 @@
   --motion-duration-min-dwell: 600ms;
   --motion-duration-typeahead: 1000ms;
   --motion-duration-after-done: 6000ms;
+  --motion-duration-confirm: 1500ms;
   --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
   --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
   --motion-distance-swap-blur: 6px;
@@ -232,6 +233,12 @@
   --app-artifacts-size-gallery-tile-mark-phone: 280px;
   --app-artifacts-size-gallery-page-max: 1440px;
   --app-artifacts-size-canvas-live-outline: 3px;
+  --app-artifacts-size-tokens-swatch-height: 72px;
+  --app-artifacts-size-tokens-swatch-height-phone: 64px;
+  --app-artifacts-size-tokens-meta-column: 288px;
+  --app-artifacts-size-tokens-radius-sample-width: 120px;
+  --app-artifacts-size-tokens-radius-sample-height: 80px;
+  --app-artifacts-size-tokens-plot-height: 96px;
   --app-artifacts-opacity-tile-tint: 0.12;
   --app-artifacts-type-gallery-display-family: Manrope;
   --app-artifacts-type-gallery-display-size: 72px;

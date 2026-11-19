@@ -565,7 +565,8 @@ export const tokens = {
       "revealCadence": 550,
       "minDwell": 600,
       "typeahead": 1000,
-      "afterDone": 6000
+      "afterDone": 6000,
+      "confirm": 1500
     },
     "easing": {
       "easeOut": [

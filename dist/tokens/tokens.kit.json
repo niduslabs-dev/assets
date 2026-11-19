@@ -982,6 +982,11 @@
       "value": 6000,
       "description": "dismissible: a finished panel closes itself after this (Drop's shipped value)"
     },
+    "motion.duration.confirm": {
+      "type": "duration",
+      "value": 1500,
+      "description": "a confirmation (Copied) stays this long, then the control returns"
+    },
     "motion.easing.easeOut": {
       "type": "cubicBezier",
       "value": [
@@ -1572,6 +1577,36 @@
       "type": "dimension",
       "value": 3,
       "description": "The outline of a board that is live in place on the canvas (moss)."
+    },
+    "app.artifacts.size.tokens.swatchHeight": {
+      "type": "dimension",
+      "value": 72,
+      "description": "The tokens page: a swatch tile's height on the Mac (one mode of a colour, drawn as it is used)."
+    },
+    "app.artifacts.size.tokens.swatchHeightPhone": {
+      "type": "dimension",
+      "value": 64,
+      "description": "The tokens page: a swatch tile's height on the phone."
+    },
+    "app.artifacts.size.tokens.metaColumn": {
+      "type": "dimension",
+      "value": 288,
+      "description": "The tokens page: the name column of type, spacing, size and motion rows."
+    },
+    "app.artifacts.size.tokens.radiusSampleWidth": {
+      "type": "dimension",
+      "value": 120,
+      "description": "The tokens page: a radius sample's width, wide enough that a pill reads as a capsule."
+    },
+    "app.artifacts.size.tokens.radiusSampleHeight": {
+      "type": "dimension",
+      "value": 80,
+      "description": "The tokens page: a radius sample's height."
+    },
+    "app.artifacts.size.tokens.plotHeight": {
+      "type": "dimension",
+      "value": 96,
+      "description": "The tokens page: a curve or spring plot's height."
     },
     "app.artifacts.opacity.tileTint": {
       "type": "number",

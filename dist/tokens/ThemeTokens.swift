@@ -242,6 +242,8 @@ enum ThemeTokens {
             static let typeahead: TimeInterval = 1
             /// dismissible: a finished panel closes itself after this (Drop's shipped value)
             static let afterDone: TimeInterval = 6
+            /// a confirmation (Copied) stays this long, then the control returns
+            static let confirm: TimeInterval = 1.5
         }
         enum Easing {
             static let easeOut = Animation.timingCurve(0, 0, 0.58, 1, duration: 1)
